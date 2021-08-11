@@ -1,0 +1,18 @@
+@import url("https://use.typekit.net/exv3fkn.css");
+
+:root {
+  --font-sans: 'neue-haas-grotesk-display', helvetica, arial, sans-serif;
+
+  // colors
+  --color-green: #A5B455;
+  --color-lightgray: #EBEBEB;
+  --color-darkgray: #646464;
+  --color-black: #111;
+  --color-white: #eee;
+}
+
+body {
+  --color-background: var(--color-green);
+  --color-text: var(--color-black);
+  --color-highlight: var(--color-white);
+}
