@@ -69,11 +69,22 @@ export default {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
   align-items: center;
+  margin-bottom: 3rem;
 }
 .program-day {
   grid-column: 1 / span 3;
   color: var(--color-highlight);
-  padding-top: 3px;
+  display: flex;
+  &:after {
+    content: "";
+    display: block;
+    background: var(--color-highlight);
+    width: auto;
+    flex: 1;
+    align-self: center;
+    height: 3px;
+    margin-left: 1rem;
+  }
 }
 @media (min-width: 800px) {
   .program-grid {
