@@ -1,5 +1,8 @@
 <template>
   <section class="program-grid">
+    <div class="program-day">
+      Friday 14. January
+    </div>
     <ProgramItem
       v-for="artist in $static.artists.edges"
       :key="artist.id"
@@ -15,6 +18,7 @@ query {
       node {
         id
         title
+        nationality
         slug {
           current
         }
@@ -66,19 +70,14 @@ export default {
   grid-gap: 1rem;
   align-items: center;
 }
+.program-day {
+  grid-column: 1 / span 3;
+  color: var(--color-highlight);
+  padding-top: 3px;
+}
 @media (min-width: 800px) {
   .program-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media (min-width: 1200px) {
-  .program-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (min-width: 1400px) {
-  .program-grid {
-    grid-template-columns: repeat(5, 1fr);
   }
 }
 </style>

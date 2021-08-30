@@ -1,6 +1,8 @@
 <template>
   <Layout>
     <Program />
+    <Program />
+    <Program />
   </Layout>
 </template>
 
