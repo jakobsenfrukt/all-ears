@@ -14,9 +14,10 @@
 			<span class="highlight">January</span>
 			<span class="highlight">2022</span>
     </div>
-    <nav class="nav">
-      <g-link class="nav-link" to="/">Home</g-link>
-      <g-link class="nav-link" to="/about/">About</g-link>
+    <nav class="site-nav">
+      <g-link class="nav-link" to="/">Lineup</g-link>
+      <g-link class="nav-link" to="/info/">Info</g-link>
+      <g-link class="nav-link" to="/tickets/">Tickets</g-link>
     </nav>
   </header>
 </template>
@@ -33,12 +34,19 @@
   span {
     display: block;
     &.highlight {
-      color: var(--color-white);
+      color: var(--color-highlight);
     }
   }
 }
 
 .nav-link {
-  margin-left: 20px;
+  margin-left: 1rem;
+  display: block;
+}
+
+@media (min-width: 800px) {
+  .nav-link {
+    display: inline-block;
+  }
 }
 </style>

@@ -6,7 +6,7 @@
 
 html {
 	min-height: 100%;
-	font-size: calc(16px + 6*(100vw - 320px)/1600);
+	font-size: calc(20px + 6*(100vw - 420px)/1200);
 }
 
 body {
@@ -20,4 +20,15 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-underline-position: below;
+    text-underline-offset: .1rem;
+    text-decoration-thickness: .12rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+  margin: 0;
 }

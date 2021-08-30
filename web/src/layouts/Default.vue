@@ -24,6 +24,13 @@ export default {
 
 <style >
 .layout {
-  padding: 1rem;
+  padding: .4rem;
+
+  @media (min-width: 800px) {
+    padding: .6rem;
+  }
+  @media (min-width: 1200px) {
+    padding: .8rem;
+  }
 }
 </style>

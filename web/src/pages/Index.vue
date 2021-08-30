@@ -1,13 +1,18 @@
 <template>
   <Layout>
-    <h1>Hei og velkommen :)</h1>
+    <Program />
   </Layout>
 </template>
 
 <script>
+import Program from '@/components/Program'
+
 export default {
   metaInfo: {
     title: 'All Ears'
+  },
+  components: {
+    Program
   }
 }
 </script>
