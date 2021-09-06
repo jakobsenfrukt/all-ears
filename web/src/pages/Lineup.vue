@@ -1,6 +1,5 @@
 <template>
   <Layout>
-    <Logo />
     <Program />
     <Program />
     <Program />
@@ -8,7 +7,6 @@
 </template>
 
 <script>
-import Logo from '@/components/Logo'
 import Program from '@/components/Program'
 
 export default {
@@ -16,7 +14,6 @@ export default {
     title: 'All Ears'
   },
   components: {
-    Logo,
     Program
   }
 }

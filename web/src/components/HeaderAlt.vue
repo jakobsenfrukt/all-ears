@@ -21,11 +21,14 @@
 }
 .nav-link {
   display: block;
+  background: var(--color-text);
+  color: var(--color-background);
+  padding: .2rem .4rem;
   &:hover {
-    text-decoration: underline;
-    text-underline-position: below;
-    text-underline-offset: .1rem;
-    text-decoration-thickness: 3px;
+    text-decoration: none;
+    &:before {
+      content: "->";
+    }
   }
 }
 </style>
