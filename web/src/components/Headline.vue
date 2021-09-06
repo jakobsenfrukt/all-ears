@@ -1,7 +1,9 @@
 <template>
   <div class="headline">
-    <span class="highlight">All</span>
-    <span class="highlight">Ears</span>
+    <a href="/">
+      <span class="highlight">All</span>
+      <span class="highlight">Ears</span>
+    </a>
     <span>Festival</span>
     <span>for</span>
     <span>improvised</span>
@@ -17,13 +19,17 @@
 
 <style lang="scss" scoped>
 .headline {
-  font-size: 2rem;
-  line-height: 1;
+  position: fixed;
   grid-row: span 2;
   span {
     display: block;
     &.highlight {
       color: var(--color-highlight);
+    }
+  }
+  a {
+    &:hover {
+      text-decoration: none;
     }
   }
 }

@@ -9,8 +9,8 @@
       />
     </div>
     <div class="artist-text">
-      <h3 class="artist-name">{{ artist.title }} <sup class="nationality">({{ artist.nationality }})</sup></h3>
       <span class="artist-concertstart">{{artist.concertStartTime}}</span>
+      <h3 class="artist-name">{{ artist.title }} <sup class="nationality">({{ artist.nationality }})</sup></h3>
     </div>
     <g-link class="artist-link" :to="`/lineup/${artist.slug.current}`">Link</g-link>
   </article>
@@ -58,12 +58,15 @@ export default {
       color: var(--color-darkgray);
     }
   }
-  &-lead {
-    font-size: 1rem;
-  }
   &-image {
     display: block;
     max-width: 100%;
+    height: calc(10rem * 1.1);
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
   }
   &-concertstart {
     color: var(--color-highlight);

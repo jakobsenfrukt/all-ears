@@ -68,7 +68,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
-  align-items: center;
+  align-items: top;
   margin-bottom: 3rem;
 }
 .program-day {
@@ -82,7 +82,7 @@ export default {
     width: auto;
     flex: 1;
     align-self: center;
-    height: 3px;
+    height: 5px;
     margin-left: 1rem;
   }
 }

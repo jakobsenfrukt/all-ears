@@ -1,15 +1,13 @@
 <template>
   <Layout>
     <Logo />
-    <Program />
-    <Program />
-    <Program />
+    <Lineup />
   </Layout>
 </template>
 
 <script>
 import Logo from '@/components/Logo'
-import Program from '@/components/Program'
+import Lineup from '@/components/Lineup'
 
 export default {
   metaInfo: {
@@ -17,7 +15,7 @@ export default {
   },
   components: {
     Logo,
-    Program
+    Lineup
   }
 }
 </script>

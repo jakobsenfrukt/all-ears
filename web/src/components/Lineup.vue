@@ -1,16 +1,10 @@
 <template>
-  <section class="program-grid">
-    <div class="program-day">
-      <div class="program-day-text">Friday 14. January</div>
-      <div class="program-day-tickets">
-        <a href="#">&rarr; &nbsp; Get tickets for Friday</a>
-      </div>
-    </div>
-    <ProgramItem
-      v-for="artist in $static.artists.edges"
-      :key="artist.id"
-      :artist="artist.node"
-    />
+  <section class="lineup">
+    <ul class="lineup-list">
+      <li v-for="artist in $static.artists.edges" :key="artist.id">
+        <h2>{{ artist.node.title }}  <sup class="nationality">({{ artist.node.nationality }})</sup></h2>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -67,30 +61,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.program-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  margin-bottom: 3rem;
+.lineup {
+  &-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
-.program-day {
-  grid-column: 1 / span 3;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  &-text {
-    display: inline-block;
-    padding: .2rem .4rem;
-    background: var(--color-text);
-    color: var(--color-highlight);
-  }
-  &-tickets {
-    display: inline-block;
-    padding: .2rem .4rem;
-    color: var(--color-text);
-    font-style: italic;
-  }
+.nationality {
+  display: inline-block;
+  vertical-align: top;
+  font-size: .5em;
+  line-height: 2;
+  color: var(--color-darkgray);
 }
 @media (min-width: 800px) {
   .program-grid {

@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
-    <HeadlineAlt />
-    <HeaderAlt />
+    <Headline />
+    <Header />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
@@ -19,12 +19,12 @@ query {
 </static-query>
 
 <script>
-import HeadlineAlt from '~/components/HeadlineAlt.vue'
-import HeaderAlt from '~/components/HeaderAlt.vue'
+import Headline from '~/components/Headline.vue'
+import Header from '~/components/Header.vue'
 export default {
   components: {
-    HeadlineAlt,
-    HeaderAlt
+    Headline,
+    Header
   }
 }
 </script>

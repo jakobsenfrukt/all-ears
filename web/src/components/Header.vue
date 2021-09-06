@@ -2,7 +2,7 @@
   <header class="site-header">
     <nav class="site-nav">
       <g-link class="nav-link" to="/lineup">Lineup</g-link>
-      <g-link class="nav-link" to="/alt">Tickets</g-link>
+      <g-link class="nav-link" to="/tickets">Tickets</g-link>
       <g-link class="nav-link" to="/info/">Info</g-link>
     </nav>
   </header>
@@ -25,7 +25,7 @@
     text-decoration: underline;
     text-underline-position: below;
     text-underline-offset: .1rem;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 5px;
   }
 }
 </style>

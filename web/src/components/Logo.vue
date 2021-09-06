@@ -25,9 +25,9 @@
 <style lang="scss" scoped>
 .logo {
   height: 70vh;
-  text-align: right;
+  text-align: center;
   margin-bottom: 3rem;
-  color: white;
+  color: black;
 
   svg {
     display: inline-block;
