@@ -1,5 +1,5 @@
 <template>
-  <div class="headline">
+  <div class="headline" :class="{index: index}">
     <a href="/">
       <span class="highlight">All</span>
       <span class="highlight">Ears</span>
@@ -17,6 +17,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    index: Boolean
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .headline {
   position: fixed;
@@ -30,6 +38,15 @@
   a {
     &:hover {
       text-decoration: none;
+    }
+  }
+  &.index {
+    font-size: 2rem;
+    span {
+      display: block;
+      &.highlight {
+        color: var(--color-white);
+      }
     }
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <div class="layout">
-    <Headline />
-    <Header />
+    <Headline index />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
@@ -29,8 +28,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .layout {
+  background: var(--color-green);
   padding: .4rem;
 
   display: grid;
