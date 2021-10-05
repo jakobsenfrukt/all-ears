@@ -7,7 +7,12 @@
         :alt="$page.artist.mainImage.alt"
         class="artist-image"
       />
-      <h1 class="artist-name">{{ $page.artist.title }} <sup class="nationality">({{ $page.artist.nationality }})</sup></h1>
+      <div class="artist-heading">
+        <h1 class="artist-name">{{ $page.artist.title }} <sup class="nationality">({{ $page.artist.nationality }})</sup></h1>
+        <div class="artist-time">
+          <span>{{ $page.artist.concertStartTime }}</span> &mdash; <span>{{ $page.artist.concertDate }}</span>
+        </div>
+      </div>
       <div class="artist-text artist-text-en">
         <BlockContent
           class="artist-content"
@@ -90,8 +95,10 @@ query artist ($id: ID!) {
     grid-column: 1 / span 4;
     width: 100%;
   }
-  &-name {
+  &-heading {
     grid-column: 1 / span 6;
+  }
+  &-name {
     font-size: 2rem;
 
     .nationality {
@@ -101,6 +108,10 @@ query artist ($id: ID!) {
       line-height: 2;
       color: var(--color-darkgray);
     }
+  }
+  &-time {
+    font-size: 2rem;
+    color: var(--color-green);
   }
   &-text {
     grid-column: span 3;

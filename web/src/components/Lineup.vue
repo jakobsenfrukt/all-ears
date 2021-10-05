@@ -50,18 +50,10 @@ query {
 }
 </static-query>
 
-<script>
-import ProgramItem from '@/components/ProgramItem'
-
-export default {
-  components: {
-    ProgramItem
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 .lineup {
+  max-width: 80%;
+  margin: 0 0 0 auto;
   &-list {
     list-style: none;
     margin: 0;
@@ -74,10 +66,5 @@ export default {
   font-size: .5em;
   line-height: 2;
   color: var(--color-darkgray);
-}
-@media (min-width: 800px) {
-  .program-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 </style>

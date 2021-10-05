@@ -28,6 +28,7 @@ export default {
 <style lang="scss" scoped>
 .headline {
   position: fixed;
+  z-index: 1000;
   grid-row: span 2;
   span {
     display: block;
@@ -41,18 +42,11 @@ export default {
     }
   }
   &.index {
-    font-size: 2rem;
     span {
-      display: block;
       &.highlight {
         color: var(--color-white);
       }
     }
-  }
-}
-@media (max-width: 800px) {
-  .headline {
-    font-size: 1rem;
   }
 }
 </style>

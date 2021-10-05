@@ -6,6 +6,7 @@
         <slot />
       </main>
     </transition>
+    <Footer />
   </div>
 </template>
 
@@ -19,11 +20,11 @@ query {
 
 <script>
 import Headline from '~/components/Headline.vue'
-import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
 export default {
   components: {
     Headline,
-    Header
+    Footer
   }
 }
 </script>
@@ -36,7 +37,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 1fr;
-  grid-gap: 1rem;
 
   @media (min-width: 800px) {
     padding: .6rem;

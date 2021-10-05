@@ -3,7 +3,6 @@
     <div class="artist-image">
       <g-image
         v-if="artist.mainImage"
-        class="artist-image"
         :src="$urlForImage(artist.mainImage, $static.metadata.sanityOptions).width(400).auto('format').url()"
         :alt="artist.mainImage.alt"
       />
@@ -61,11 +60,19 @@ export default {
   &-image {
     display: block;
     max-width: 100%;
-    height: calc(10rem * 1.1);
+    padding-top: 80%;
+    background: var(--color-darkgray);
+    position: relative;
 
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
   }
   &-concertstart {
