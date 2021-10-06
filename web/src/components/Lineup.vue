@@ -67,4 +67,9 @@ query {
   line-height: 2;
   color: var(--color-darkgray);
 }
+@media (max-width: 600px) {
+  .lineup h2 {
+    font-size: 1rem;
+  }
+}
 </style>

@@ -49,4 +49,9 @@ export default {
     }
   }
 }
+@media (max-width: 600px) {
+  .headline {
+    font-size: 1rem;
+  }
+}
 </style>

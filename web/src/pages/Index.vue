@@ -1,6 +1,6 @@
 <template>
   <IndexLayout class="index">
-    <g-link to="/lineup"><Logo class="index-logo" /></g-link>
+    <g-link to="/lineup"><Logo noise class="index-logo" /></g-link>
     <Lineup class="index-lineup" />
     <TicketBadge class="index-tickets" />
   </IndexLayout>
