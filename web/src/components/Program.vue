@@ -66,14 +66,14 @@ export default {
 <style lang="scss" scoped>
 .program-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   align-items: top;
   margin-bottom: 3rem;
   font-size: var(--font-l);
 }
 .program-day {
-  grid-column: 1 / span 3;
+  grid-column: 1 / -1;
   color: var(--color-highlight);
   display: flex;
   &:after {
@@ -83,13 +83,18 @@ export default {
     width: auto;
     flex: 1;
     align-self: center;
-    height: 5px;
+    height: var(--border-width);
     margin-left: 1rem;
   }
 }
-@media (min-width: 800px) {
+@media (max-width: 900px) {
   .program-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+/*@media (max-width: 600px) {
+  .program-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}*/
 </style>

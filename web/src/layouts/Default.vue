@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
-  padding: .4rem;
+  padding: .5rem;
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -68,11 +68,20 @@ export default {
   grid-column: 2 / span 3;
   grid-row: 2;
 }
+@media (max-width: 600px) {
+  .layout {
+    grid-template-rows: auto;
+  }
+  .site-main {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}
 
 .to-top {
   width: 100%;
   margin-top: 4rem;
-  border-top: 6px solid var(--color-green);
+  border-top: var(--border-width) solid var(--color-green);
   padding: .5rem;
   text-align: right;
 

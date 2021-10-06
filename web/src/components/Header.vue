@@ -26,7 +26,29 @@
     text-decoration: underline;
     text-underline-position: below;
     text-underline-offset: .1rem;
-    text-decoration-thickness: 5px;
+    text-decoration-thickness: var(--border-width);
+  }
+}
+@media (max-width: 600px) {
+  .site-header {
+    grid-column: 1 / span 4;
+    width: 100%;
+  }
+  .site-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-link {
+    text-decoration: underline;
+    text-underline-position: below;
+    text-underline-offset: .1rem;
+    text-decoration-thickness: var(--border-width);
+    &:nth-of-type(2) {
+      text-align: center;
+    }
+    &:nth-of-type(3) {
+      text-align: right;
+    }
   }
 }
 </style>

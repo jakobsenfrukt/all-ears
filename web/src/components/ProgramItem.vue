@@ -41,6 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .artist {
+  grid-column: span 1;
   display: block;
   position: relative;
   

@@ -3,7 +3,10 @@
 :root {
   --font-sans: 'neue-haas-grotesk-display', helvetica, arial, sans-serif;
 
+  --font-s: .8rem;
   --font-l: 1.4rem;
+
+  --border-width: 5px;
 
   // colors
   --color-green: #A5B455;
@@ -17,4 +20,19 @@ body {
   --color-background: var(--color-lightgray);
   --color-text: var(--color-black);
   --color-highlight: var(--color-green);
+}
+
+@media (max-width: 800px) {
+  :root {
+    --font-l: 1.2rem;
+    --font-s: 18px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --font-l: 1rem;
+    --font-s: 16px;
+
+    --border-width: 3px;
+  }
 }
