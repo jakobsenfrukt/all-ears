@@ -45,7 +45,7 @@ export default {
         {
           name: 'og:image',
           key: 'og:image',
-          content: this.$page.artist.mainImage.asset.url
+          content: this.$page.artist.mainImage ? this.$page.artist.mainImage.asset.url : ' '
         }
       ]
     }
