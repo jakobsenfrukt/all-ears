@@ -30,6 +30,7 @@ export default {
   position: fixed;
   z-index: 1000;
   grid-row: span 2;
+  font-size: 2rem;
   span {
     display: block;
     &.highlight {

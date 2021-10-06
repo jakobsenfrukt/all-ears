@@ -46,7 +46,7 @@ export default {
   }
 }
 .site-main {
-  grid-column: 2 / span 3;
+  grid-column: 1 / span 4;
   grid-row: 2;
 }
 

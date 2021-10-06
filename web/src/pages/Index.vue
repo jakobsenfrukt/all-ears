@@ -1,6 +1,6 @@
 <template>
   <IndexLayout class="index">
-    <g-link to="/lineup"><Logo noise class="index-logo" /></g-link>
+    <!--<g-link to="/lineup"><Logo noise class="index-logo" /></g-link>-->
     <Lineup class="index-lineup" />
     <TicketBadge class="index-tickets" />
   </IndexLayout>
@@ -50,7 +50,7 @@ export default {
     text-align: right;
     position: absolute;
     right: -.5rem;
-    bottom: -.5rem;
+    top: -.5rem;
     margin: 0;
     z-index: 2;
   }
