@@ -6,10 +6,12 @@
       <main class="site-main">
         <slot />
         <div class="to-top">
-          <span>Til toppen</span>
-          <svg class="to-top-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
-          </svg>
+          <button @click="toTop()" class="to-top-button">
+            <span>Til toppen</span>
+            <svg class="to-top-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
+            </svg>
+          </button>
         </div>
       </main>
     </transition>
@@ -35,6 +37,14 @@ export default {
     Headline,
     Header,
     Footer
+  },
+  methods: {
+    toTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    }
   }
 }
 </script>
@@ -66,10 +76,21 @@ export default {
   padding: .5rem;
   text-align: right;
 
+  &-button {
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
   &-icon {
     display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
     margin: 0 0 .3rem .5rem;
     vertical-align: middle;
   }

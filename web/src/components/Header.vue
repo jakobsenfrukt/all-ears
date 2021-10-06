@@ -12,6 +12,7 @@
 .site-header {
   grid-column: 2 / span 3;
   margin-bottom: 2rem;
+  font-size: var(--font-l);
 }
 .site-nav {
   width: 100%;

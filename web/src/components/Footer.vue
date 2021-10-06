@@ -18,7 +18,7 @@
 <style lang="scss" scoped>
 .site-footer {
   position: fixed;
-  bottom: 1rem;
+  bottom: .6rem;
   grid-column: 1 / span 1;
   grid-row: span 2;
 }

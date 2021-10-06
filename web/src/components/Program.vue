@@ -70,6 +70,7 @@ export default {
   grid-gap: 1rem;
   align-items: top;
   margin-bottom: 3rem;
+  font-size: var(--font-l);
 }
 .program-day {
   grid-column: 1 / span 3;

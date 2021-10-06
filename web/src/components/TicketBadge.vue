@@ -7,8 +7,8 @@
 <style lang="scss" scoped>
 .ticket-badge {
   display: block;
-  width: 8rem;
-  height: 8rem;
+  width: 5rem;
+  height: 5rem;
   transform: rotate(-12deg);
   background: var(--color-black);
   color: var(--color-white);
@@ -16,7 +16,7 @@
   border-radius: 666px;
   display: flex;
   align-items: center;
-  padding: .4rem;
+  padding: .5rem;
   box-sizing: content-box;
   transition: all .1s linear;
 
@@ -29,14 +29,6 @@
   &:hover {
     transform: rotate(0);
     text-decoration: none;
-  }
-}
-@media (max-width: 600px) {
-  .ticket-badge {
-    font-size: 1rem;
-    width: 4.5rem;
-    height: 4.5rem;
-    padding: .6rem;
   }
 }
 </style>

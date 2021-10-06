@@ -59,6 +59,9 @@ query {
     margin: 0;
     padding: 0;
   }
+  h2 {
+    font-size: var(--font-l);
+  }
 }
 .nationality {
   display: inline-block;
@@ -66,10 +69,5 @@ query {
   font-size: .5em;
   line-height: 2;
   color: var(--color-darkgray);
-}
-@media (max-width: 600px) {
-  .lineup h2 {
-    font-size: 1rem;
-  }
 }
 </style>

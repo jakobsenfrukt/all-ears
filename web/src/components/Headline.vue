@@ -30,6 +30,7 @@ export default {
   position: fixed;
   z-index: 1000;
   grid-row: span 2;
+  font-size: var(--font-l);
   span {
     display: block;
     &.highlight {
@@ -47,11 +48,6 @@ export default {
         color: var(--color-white);
       }
     }
-  }
-}
-@media (max-width: 600px) {
-  .headline {
-    font-size: 1rem;
   }
 }
 </style>

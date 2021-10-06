@@ -6,7 +6,7 @@
 
 html {
 	min-height: 100%;
-	font-size: calc(18px + 6*(100vw - 420px)/1200);
+	font-size: calc(24px + 6*(100vw - 420px)/1200);
 }
 
 body {
@@ -15,7 +15,6 @@ body {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.1;
 }
@@ -32,7 +31,7 @@ a {
 }
 
 p {
-  font-size: 1rem;
+  font-size: .8rem;
   line-height: 1.2;
   margin-top: 0;
 }

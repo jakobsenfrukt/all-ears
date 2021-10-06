@@ -97,9 +97,10 @@ query artist ($id: ID!) {
   }
   &-heading {
     grid-column: 1 / span 6;
+    font-size: var(--font-l);
   }
   &-name {
-    font-size: 2rem;
+    font-size: var(--font-l);
 
     .nationality {
       display: inline-block;
@@ -110,7 +111,6 @@ query artist ($id: ID!) {
     }
   }
   &-time {
-    font-size: 2rem;
     color: var(--color-green);
   }
   &-text {
