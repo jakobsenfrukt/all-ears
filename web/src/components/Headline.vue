@@ -62,10 +62,18 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 1rem;
+
+    background: url('/images/all-ears-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     &-half {
       &--right {
         text-align: right;
       }
+    }
+    &.index {
+      background: none;
     }
   }
 }

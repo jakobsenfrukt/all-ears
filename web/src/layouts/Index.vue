@@ -32,6 +32,9 @@ export default {
 <style lang="scss" scoped>
 .layout {
   background: var(--color-green);
+  background-image: url('/images/noise.png');
+  background-size: contain;
+  background-attachment: fixed;
   padding: .4rem;
 
   display: grid;

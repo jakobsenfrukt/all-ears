@@ -121,4 +121,12 @@ query artist ($id: ID!) {
     }
   }
 }
+@media (max-width: 600px) {
+  .artist {
+    margin-top: -.5rem;
+    &-image {
+      grid-column: 1 / span 6;
+    }
+  }
+}
 </style>

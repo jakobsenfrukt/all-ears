@@ -90,6 +90,12 @@ export default {
 @media (max-width: 900px) {
   .program-grid {
     grid-template-columns: repeat(2, 1fr);
+    column-gap: .5rem;
+  }
+  .program-day {
+    &:after {
+      margin-left: .3rem;
+    }
   }
 }
 /*@media (max-width: 600px) {

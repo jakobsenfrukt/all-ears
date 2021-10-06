@@ -51,6 +51,9 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
+  background-image: url('/images/noise.png');
+  background-size: contain;
+  background-attachment: fixed;
   padding: .5rem;
 
   display: grid;
