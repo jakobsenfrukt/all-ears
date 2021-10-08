@@ -9,20 +9,15 @@ export default {
       title: 'Title'
     },
     {
-      name: 'intro',
-      type: 'lead',
-      title: 'Intro'
+      name: 'description',
+      type: 'text',
+      title: 'Description',
+      description: 'Describe your site for search engines and social media.'
     },
     {
       name: 'social',
       type: 'social',
       title: 'Social'
-    },
-    {
-      name: 'description',
-      type: 'text',
-      title: 'Description',
-      description: 'Describe your site for search engines and social media.'
     }
   ]
 }

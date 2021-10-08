@@ -9,6 +9,11 @@ export default {
       title: 'Title'
     },
     {
+      name: 'lead',
+      title: 'Intro',
+      type: 'lead'
+    },
+    {
       name: 'practical',
       title: 'Practical',
       type: 'body',

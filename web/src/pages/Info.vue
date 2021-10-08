@@ -7,6 +7,9 @@
         <a @click="toAnchor('#contact')">Contact</a>
       </nav>
       <div class="content about-content">
+        <section class="about-section">
+          <block-content :blocks="$page.about._rawLead" class="about-lead" />
+        </section>
         <section id="practical" class="about-section">
           <block-content :blocks="$page.about._rawPractical" />
         </section>
@@ -25,6 +28,7 @@
 query {
   about: sanityAbout (id: "about") {
     title
+    _rawLead
     _rawPractical
     _rawAbout
     _rawContact
@@ -58,6 +62,11 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 
+  &-lead {
+    font-size: var(--font-l);
+    margin: 0;
+  }
+
   &-content {
     order: 1;
     grid-column: 1 / span 2;
@@ -75,6 +84,7 @@ export default {
     position: fixed;
     right: .75rem;
     padding-left: 1rem;
+    color: var(--color-highlight);
 
     a {
       display: block;
@@ -87,10 +97,6 @@ export default {
         text-decoration-thickness: var(--border-width);
       }
     }
-  }
-  &-lead {
-    color: var(--color-highlight);
-    margin-bottom: 2rem;
   }
 }
 </style>
