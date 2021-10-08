@@ -11,7 +11,7 @@
 <style lang="scss" scoped>
 .site-header {
   grid-column: 2 / span 3;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   font-size: var(--font-l);
 }
 .site-nav {

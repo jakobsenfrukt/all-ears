@@ -5,10 +5,10 @@
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
-        <div class="to-top">
-          <button @click="toTop()" class="to-top-button">
+        <div class="totop">
+          <button @click="toTop()" class="totop-button">
             <span>Til toppen</span>
-            <svg class="to-top-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="totop-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
             </svg>
           </button>
@@ -81,11 +81,11 @@ export default {
   }
 }
 
-.to-top {
+.totop {
   width: 100%;
   margin-top: 4rem;
   border-top: var(--border-width) solid var(--color-highlight);
-  padding: .5rem;
+  padding: .5rem .5rem 0;
   text-align: right;
 
   &-button {
