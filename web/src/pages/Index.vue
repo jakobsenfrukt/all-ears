@@ -69,8 +69,8 @@ export default {
     }
     &-lineup {
       text-align: left;
-      max-width: 80%;
-      margin: 26vh auto 0;
+      max-width: 90%;
+      margin: 26vh 0 0;
     }
   }
 }
