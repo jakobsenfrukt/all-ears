@@ -25,10 +25,10 @@ export default () =>
         .schemaType('venue')
         .child(S.documentTypeList('venue').title('Venues')),
       S.listItem()
-        .title('Practical info')
+        .title('Info')
         .child(
           S.editor()
-            .title('Practical info')
+            .title('Info')
             .id('about')
             .schemaType('about')
             .documentId('about')

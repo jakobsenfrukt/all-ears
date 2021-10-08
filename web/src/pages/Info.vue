@@ -8,13 +8,13 @@
       </nav>
       <div class="content about-content">
         <section id="practical" class="about-section">
-          <block-content :blocks="$page.about._rawBody" />
+          <block-content :blocks="$page.about._rawPractical" />
         </section>
         <section id="about" class="about-section">
-          <block-content :blocks="$page.about._rawBody" />
+          <block-content :blocks="$page.about._rawAbout" />
         </section>
         <section id="contact" class="about-section">
-          <block-content :blocks="$page.about._rawBody" />
+          <block-content :blocks="$page.about._rawContact" />
         </section>
       </div>
     </section>
@@ -25,8 +25,9 @@
 query {
   about: sanityAbout (id: "about") {
     title
-    _rawLead
-    _rawBody
+    _rawPractical
+    _rawAbout
+    _rawContact
   }
 }
 </page-query>
@@ -46,7 +47,7 @@ export default {
     }
   },
   metaInfo: {
-    title: 'About'
+    title: 'Info'
   }
 }
 </script>

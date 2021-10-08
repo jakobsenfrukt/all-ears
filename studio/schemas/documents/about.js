@@ -9,13 +9,18 @@ export default {
       title: 'Title'
     },
     {
-      name: 'lead',
-      type: 'lead',
-      title: 'Lead'
+      name: 'practical',
+      title: 'Practical',
+      type: 'body',
     },
     {
-      name: 'body',
-      title: 'Body',
+      name: 'about',
+      title: 'About',
+      type: 'body',
+    },
+    {
+      name: 'contact',
+      title: 'Contact',
       type: 'body',
     }
   ]

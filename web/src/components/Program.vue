@@ -1,13 +1,15 @@
 <template>
-  <section class="program-grid">
-    <div class="program-day">
-      Friday 14. January
+  <section class="program">
+    <div v-for="(artists, day, index) in artistsByDay()" :key="index" class="program-grid">
+      <div class="program-day">
+        {{ day }}
+      </div>
+      <ProgramItem
+        v-for="artist in artists"
+        :key="artist.id"
+        :artist="artist.node"
+      />
     </div>
-    <ProgramItem
-      v-for="artist in $static.artists.edges"
-      :key="artist.id"
-      :artist="artist.node"
-    />
   </section>
 </template>
 
@@ -59,6 +61,18 @@ import ProgramItem from '@/components/ProgramItem'
 export default {
   components: {
     ProgramItem
+  },
+  methods: {
+    artistsByDay() {
+      const groupBy = function(artists, day) {
+        return artists.reduce(function(result, artist) {
+          (result[artist.node[day]] = result[artist.node[day]] || []).push(artist);
+          return result;
+        }, {});
+      }
+      console.log(groupBy(this.$static.artists.edges, 'concertDate'))
+      return groupBy(this.$static.artists.edges, 'concertDate')
+    }
   }
 }
 </script>

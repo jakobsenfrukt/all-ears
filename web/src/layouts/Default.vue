@@ -89,7 +89,7 @@ export default {
   text-align: right;
 
   &-button {
-    font-size: inherit;
+    font-size: var(--font-l);
     font-family: inherit;
     border: none;
     outline: none;
@@ -101,8 +101,8 @@ export default {
 
   &-icon {
     display: inline-block;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     margin: 0 0 .3rem .5rem;
     vertical-align: middle;
   }

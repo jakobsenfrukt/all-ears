@@ -1,5 +1,8 @@
 <template>
   <div class="headline" :class="{'headline--index': index}">
+    <!--<div class="headline-logo">
+      <img src="/images/logo-round.png" />
+    </div>-->
     <div class="headline-half headline-half--left">
       <a href="/">
         <span class="highlight">All</span>
@@ -52,6 +55,17 @@ export default {
         color: var(--color-white);
       }
     }
+    .headline-logo {
+      display: none;
+    }
+  }
+  &-logo {
+    width: 6rem;
+    height: 6rem;
+    margin: -1.5rem 0 1rem -1rem;
+    img {
+      width: 100%;
+    }
   }
 }
 @media (max-width: 600px) {
@@ -67,6 +81,9 @@ export default {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    &-logo {
+      display: none;
+    }
     &-half {
       &--right {
         text-align: right;
