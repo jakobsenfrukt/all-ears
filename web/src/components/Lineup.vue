@@ -52,8 +52,7 @@ query {
 
 <style lang="scss" scoped>
 .lineup {
-  max-width: 80%;
-  margin: 0 0 0 auto;
+  margin: 0;
   &-list {
     list-style: none;
     margin: 0;

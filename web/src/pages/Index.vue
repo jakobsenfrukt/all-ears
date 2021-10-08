@@ -1,6 +1,6 @@
 <template>
   <IndexLayout class="index">
-    <g-link to="/lineup"><Logo noise class="index-logo" /></g-link>
+    <Logo noise class="index-logo" />
     <Lineup class="index-lineup" />
     <TicketBadge class="index-tickets" />
   </IndexLayout>
@@ -32,27 +32,46 @@ export default {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  padding-bottom: 6rem;
   &-logo {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 5vh;
     left: 0;
     color: white;
-    height: 100vh;
+    height: 90vh;
     z-index: 1;
   }
   &-lineup {
-    text-align: right;
     font-size: 2rem;
     position: relative;
     z-index: 2;
+    text-align: right;
   }
   &-tickets {
     text-align: right;
-    position: absolute;
+    position: fixed;
     right: -.5rem;
     bottom: -.5rem;
     margin: 0;
     z-index: 2;
+  }
+}
+@media (max-width: 600px) {
+  .index {
+    &-logo {
+      position: fixed;
+      top: 5vh;
+      left: 12vw;
+      color: white;
+      width: 80vw;
+      height: auto;
+      z-index: 1;
+    }
+    &-lineup {
+      text-align: left;
+      max-width: 80%;
+      margin: 26vh auto 0;
+    }
   }
 }
 </style>

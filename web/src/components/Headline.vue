@@ -1,5 +1,5 @@
 <template>
-  <div class="headline" :class="{index: index}">
+  <div class="headline" :class="{'headline--index': index}">
     <div class="headline-half headline-half--left">
       <a href="/">
         <span class="highlight">All</span>
@@ -46,7 +46,7 @@ export default {
       text-decoration: none;
     }
   }
-  &.index {
+  &--index {
     span {
       &.highlight {
         color: var(--color-white);
@@ -58,7 +58,7 @@ export default {
   .headline {
     grid-row: span 1;
     grid-column: 1 / -1;
-    position: static;
+    position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 1rem;
@@ -72,7 +72,7 @@ export default {
         text-align: right;
       }
     }
-    &.index {
+    &--index {
       background: none;
     }
   }

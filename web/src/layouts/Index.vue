@@ -60,4 +60,10 @@ export default {
 .fade-enter {
   opacity: 0;
 }
+
+@media (max-width: 600px) {
+  .layout {
+    display: block;
+  }
+}
 </style>

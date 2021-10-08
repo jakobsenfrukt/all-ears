@@ -111,7 +111,7 @@ query artist ($id: ID!) {
     }
   }
   &-time {
-    color: var(--color-green);
+    color: var(--color-highlight);
   }
   &-text {
     grid-column: span 3;

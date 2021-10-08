@@ -84,7 +84,7 @@ export default {
 .to-top {
   width: 100%;
   margin-top: 4rem;
-  border-top: var(--border-width) solid var(--color-green);
+  border-top: var(--border-width) solid var(--color-highlight);
   padding: .5rem;
   text-align: right;
 

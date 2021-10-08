@@ -25,8 +25,8 @@ a {
   &:hover {
     text-decoration: underline;
     text-underline-position: below;
-    text-underline-offset: .1rem;
-    text-decoration-thickness: .12rem;
+    text-underline-offset: .04em;
+    text-decoration-thickness: .14em;
   }
 }
 
@@ -34,6 +34,13 @@ p {
   font-size: var(--font-s);
   line-height: 1.2;
   margin-top: 0;
+
+  a {
+    text-decoration: underline;
+    text-underline-position: below;
+    text-underline-offset: .04em;
+    text-decoration-thickness: .14em;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
