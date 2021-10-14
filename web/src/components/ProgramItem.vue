@@ -55,7 +55,6 @@ export default {
       vertical-align: top;
       font-size: .5em;
       line-height: 2;
-      color: var(--color-darkgray);
     }
   }
   &-image {
