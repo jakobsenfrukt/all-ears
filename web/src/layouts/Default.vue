@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="layout" :class="page">
     <Headline />
     <Header />
     <transition name="fade" appear>
@@ -38,6 +38,9 @@ export default {
     Header,
     Footer
   },
+  props: {
+    page: String
+  },
   methods: {
     toTop() {
       window.scrollTo({
@@ -51,9 +54,22 @@ export default {
 
 <style lang="scss" scoped>
 .layout {
-  background-image: url('/images/noise.png');
-  background-size: contain;
+  background-image: url('/images/bg/bg-5.jpg');
+  background-size: 1900px 1200px;
   background-attachment: fixed;
+  &.index {
+    background-image: url('/images/bg/bg-index.jpg');
+  }
+  &.artists {
+    background-image: url('/images/bg/bg-artists.jpg');
+  }
+  &.tickets {
+    background-image: url('/images/bg/bg-tickets.jpg');
+  }
+  &.info {
+    background-image: url('/images/bg/bg-info.jpg');
+  }
+
   padding: .5rem;
 
   display: grid;
@@ -70,6 +86,7 @@ export default {
 .site-main {
   grid-column: 2 / span 3;
   grid-row: 2;
+  min-height: 100vh;
 }
 @media (max-width: 600px) {
   .layout {
@@ -84,7 +101,6 @@ export default {
 .totop {
   width: 100%;
   margin-top: 4rem;
-  border-top: var(--border-width) solid var(--color-highlight);
   padding: .5rem .5rem 0;
   text-align: right;
 
@@ -101,8 +117,8 @@ export default {
 
   &-icon {
     display: inline-block;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.2rem;
+    height: 1.2rem;
     margin: 0 0 .3rem .5rem;
     vertical-align: middle;
   }

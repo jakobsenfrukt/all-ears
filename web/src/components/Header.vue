@@ -1,7 +1,7 @@
 <template>
   <header class="site-header">
     <nav class="site-nav">
-      <g-link class="nav-link" to="/lineup">Lineup</g-link>
+      <g-link class="nav-link" to="/artists">Artists</g-link>
       <g-link class="nav-link" to="/tickets">Tickets</g-link>
       <g-link class="nav-link" to="/info/">Info</g-link>
     </nav>
@@ -13,6 +13,8 @@
   grid-column: 2 / span 3;
   margin-bottom: 1.6rem;
   font-size: var(--font-l);
+  position: relative;
+  z-index: 10;
 }
 .site-nav {
   width: 100%;

@@ -89,17 +89,6 @@ export default {
 .program-day {
   grid-column: 1 / -1;
   color: var(--color-highlight);
-  display: flex;
-  &:after {
-    content: "";
-    display: block;
-    background: var(--color-highlight);
-    width: auto;
-    flex: 1;
-    align-self: center;
-    height: var(--border-width);
-    margin-left: 1rem;
-  }
 }
 @media (max-width: 900px) {
   .program-grid {

@@ -1,50 +1,21 @@
 <template>
   <section class="lineup">
     <ul class="lineup-list">
-      <li v-for="artist in $static.artists.edges" :key="artist.id">
-        <h2>{{ artist.node.title }}  <sup class="nationality">({{ artist.node.nationality }})</sup></h2>
+      <li v-for="artist in $static.frontpage.lineup" :key="artist.id">
+        <g-link to="/artists">{{ artist.title }}  <sup class="nationality">({{ artist.nationality }})</sup></g-link>
       </li>
+      <!--<li><g-link to="/artists">View all</g-link></li>-->
     </ul>
   </section>
 </template>
 
 <static-query>
 query {
-  artists: allSanityArtist(sortBy: "concertStart", order: ASC) {
-    edges {
-      node {
-        id
-        title
-        nationality
-        slug {
-          current
-        }
-        concertStart(format: "D. MMMM YYYY")
-        concertDate: concertStart(format: "dddd D. MMMM")
-        concertStartTime: concertStart(format: "HH:mm")
-        mainImage {
-          asset {
-            _id
-            url
-          }
-          caption
-          alt
-          hotspot {
-            x
-            y
-            height
-            width
-          }
-          crop {
-            top
-            bottom
-            left
-            right
-          }
-        }
-        _rawBodyEn
-        _rawBodyNo
-      }
+  frontpage: sanityFrontpage (id: "frontpage") {
+    lineup {
+      id
+      title
+      nationality
     }
   }
 }
@@ -53,13 +24,21 @@ query {
 <style lang="scss" scoped>
 .lineup {
   margin: 0;
+  color: var(--color-highlight);
+  text-align: right;
+  position: relative;
+  z-index: 100;
   &-list {
     list-style: none;
     margin: 0;
     padding: 0;
   }
-  h2 {
+  a {
     font-size: var(--font-l);
+    margin: 0;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 .nationality {

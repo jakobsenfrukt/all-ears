@@ -26,7 +26,7 @@ a {
     text-decoration: underline;
     text-underline-position: below;
     text-underline-offset: .04em;
-    text-decoration-thickness: .14em;
+    text-decoration-thickness: var(--border-width);
   }
 }
 
@@ -39,7 +39,7 @@ p {
     text-decoration: underline;
     text-underline-position: below;
     text-underline-offset: .04em;
-    text-decoration-thickness: .14em;
+    text-decoration-thickness: var(--border-width);
   }
 }
 

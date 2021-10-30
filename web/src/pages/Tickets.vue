@@ -1,5 +1,6 @@
 <template>
-  <Layout>
+  <Layout page="tickets">
+    <Background page="tickets" />
     <section class="about">
       <h1>(ticket links go here)</h1>
     </section>
@@ -7,9 +8,14 @@
 </template>
 
 <script>
+import Background from '@/components/Background'
+
 export default {
+  components: {
+    Background
+  },
   metaInfo: {
-    title: 'About'
+    title: 'Tickets'
   }
 }
 </script>

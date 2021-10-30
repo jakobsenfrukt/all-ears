@@ -1,22 +1,26 @@
 <template>
-  <Layout>
+  <Layout page="info">
+    <Background page="info" />
     <section class="about">
-      <nav class="about-nav">
+      <!--<nav class="about-nav">
         <a @click="toAnchor('#practical')">Practical</a>
         <a @click="toAnchor('#about')">About</a>
         <a @click="toAnchor('#contact')">Contact</a>
-      </nav>
+      </nav>-->
       <div class="content about-content">
         <section class="about-section">
           <block-content :blocks="$page.about._rawLead" class="about-lead" />
         </section>
         <section id="practical" class="about-section">
+          <h2>Practical</h2>
           <block-content :blocks="$page.about._rawPractical" />
         </section>
         <section id="about" class="about-section">
+          <h2>About</h2>
           <block-content :blocks="$page.about._rawAbout" />
         </section>
         <section id="contact" class="about-section">
+          <h2>Contact</h2>
           <block-content :blocks="$page.about._rawContact" />
         </section>
       </div>
@@ -37,10 +41,12 @@ query {
 </page-query>
 
 <script>
+import Background from '@/components/Background'
 import BlockContent from '@/components/BlockContent'
 
 export default {
   components: {
+    Background,
     BlockContent
   },
   methods: {
@@ -62,9 +68,14 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 
+  h2 {
+    font-size: var(--font-l);
+    margin-bottom: 1rem;
+  }
+
   &-lead {
     font-size: var(--font-l);
-    margin: 0;
+    margin: 1rem 0;
   }
 
   &-content {
@@ -74,7 +85,7 @@ export default {
   }
   &-section {
     &:not(:first-of-type) {
-      padding-top: 4.5rem;
+      padding-top: 2rem;
     }
   }
   &-nav {

@@ -17,6 +17,15 @@ export default () =>
             .documentId('general')
         ),
       S.listItem()
+        .title('Front page')
+        .child(
+          S.editor()
+            .title('Front page')
+            .id('frontpage')
+            .schemaType('frontpage')
+            .documentId('frontpage')
+        ),
+      S.listItem()
         .title('Artists')
         .schemaType('artist')
         .child(S.documentTypeList('artist').title('Artists')),

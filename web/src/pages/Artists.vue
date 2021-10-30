@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout page="artists">
     <Program />
   </Layout>
 </template>
@@ -9,7 +9,7 @@ import Program from '@/components/Program'
 
 export default {
   metaInfo: {
-    title: 'All Ears'
+    title: 'Artists'
   },
   components: {
     Program

@@ -1,8 +1,5 @@
 <template>
-  <div class="headline" :class="{'headline--index': index}">
-    <!--<div class="headline-logo">
-      <img src="/images/logo-round.png" />
-    </div>-->
+  <div class="headline">
     <div class="headline-half headline-half--left">
       <a href="/">
         <span class="highlight">All</span>
@@ -24,14 +21,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    index: Boolean
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 .headline {
   position: fixed;
@@ -49,24 +38,6 @@ export default {
       text-decoration: none;
     }
   }
-  &--index {
-    span {
-      &.highlight {
-        color: var(--color-white);
-      }
-    }
-    .headline-logo {
-      display: none;
-    }
-  }
-  &-logo {
-    width: 6rem;
-    height: 6rem;
-    margin: -1.5rem 0 1rem -1rem;
-    img {
-      width: 100%;
-    }
-  }
 }
 @media (max-width: 600px) {
   .headline {
@@ -76,14 +47,6 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-bottom: 1rem;
-
-    background: url('/images/all-ears-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    &-logo {
-      display: none;
-    }
     &-half {
       &--right {
         text-align: right;

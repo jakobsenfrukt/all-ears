@@ -6,6 +6,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 import general from './documents/general'
+import frontpage from './documents/frontpage'
 import artist from './documents/artist'
 import venue from './documents/venue'
 import about from './documents/about'
@@ -25,6 +26,7 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     general,
+    frontpage,
     artist,
     venue,
     about,

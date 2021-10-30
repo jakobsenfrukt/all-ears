@@ -1,34 +1,44 @@
 <template>
-  <IndexLayout class="index">
-    <Logo noise class="index-logo" />
-    <Lineup class="index-lineup" />
-    <TicketBadge class="index-tickets" />
+  <IndexLayout class="index-page">
+    <Background page="index" />
+    <Logo noise class="index-page-logo" />
+    <Lineup />
+    <MunchLogo />
   </IndexLayout>
 </template>
 
 <script>
 import IndexLayout from '@/layouts/Index'
+import Background from '@/components/Background'
 import Headline from '@/components/Headline'
 import Logo from '@/components/Logo'
 import Lineup from '@/components/Lineup'
-import TicketBadge from '@/components/TicketBadge'
+import MunchLogo from '@/components/MunchLogo'
 
 export default {
   metaInfo: {
-    title: 'All Ears'
+    title: 'Home',
+    meta: [
+        {
+          name: 'og:image',
+          key: 'og:image',
+          content: 'https://all-ears.no/images/og-img.jpg'
+        }
+      ]
   },
   components: {
     IndexLayout,
+    Background,
     Headline,
     Logo,
     Lineup,
-    TicketBadge
+    MunchLogo
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.index {
+.index-page {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
@@ -41,23 +51,9 @@ export default {
     height: 90vh;
     z-index: 1;
   }
-  &-lineup {
-    font-size: 2rem;
-    position: relative;
-    z-index: 2;
-    text-align: right;
-  }
-  &-tickets {
-    text-align: right;
-    position: fixed;
-    right: -.5rem;
-    bottom: -.5rem;
-    margin: 0;
-    z-index: 2;
-  }
 }
 @media (max-width: 600px) {
-  .index {
+  .index-page {
     &-logo {
       position: fixed;
       top: 5vh;

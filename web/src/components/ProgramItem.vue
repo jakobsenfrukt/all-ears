@@ -11,7 +11,7 @@
       <span class="artist-concertstart">{{artist.concertStartTime}}</span>
       <h3 class="artist-name">{{ artist.title }} <sup class="nationality">({{ artist.nationality }})</sup></h3>
     </div>
-    <g-link class="artist-link" :to="`/lineup/${artist.slug.current}`">Link</g-link>
+    <g-link class="artist-link" :to="`/artists/${artist.slug.current}`">Link</g-link>
   </article>
 </template>
 
@@ -49,6 +49,7 @@ export default {
     padding-top: .2rem;
   }
   &-name {
+    font-size: 1rem;
     color: var(--color-text);
     .nationality {
       display: inline-block;
@@ -77,6 +78,7 @@ export default {
   }
   &-concertstart {
     color: var(--color-highlight);
+    font-size: 1rem;
   }
   &-link {
     position: absolute;
