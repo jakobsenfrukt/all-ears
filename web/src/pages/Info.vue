@@ -110,4 +110,11 @@ export default {
     }
   }
 }
+@media (max-width: 800px) {
+  .about {
+    &-content {
+      grid-column: 1 / -1;
+    }
+  }
+}
 </style>

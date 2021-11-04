@@ -49,7 +49,7 @@ export default {
     padding-top: .2rem;
   }
   &-name {
-    font-size: 1rem;
+    font-size: var(--font-m);
     color: var(--color-text);
     .nationality {
       display: inline-block;
@@ -78,7 +78,7 @@ export default {
   }
   &-concertstart {
     color: var(--color-highlight);
-    font-size: 1rem;
+    font-size: var(--font-m);
   }
   &-link {
     position: absolute;

@@ -47,4 +47,13 @@ query {
   font-size: .5em;
   line-height: 2;
 }
+@media (max-width: 800px) {
+  .lineup {
+    text-align: left;
+    margin-top: 60vw;
+    a {
+      font-size: var(--font-l);
+    }
+  }
+}
 </style>

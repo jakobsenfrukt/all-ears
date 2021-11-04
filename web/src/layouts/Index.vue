@@ -34,18 +34,11 @@ export default {
   background-image: url('/images/bg/bg-index.jpg');
   background-size: 1900px 1200px;
   background-attachment: fixed;
-  padding: .4rem;
+  padding: var(--spacing-m);
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 1fr;
-
-  @media (min-width: 800px) {
-    padding: .6rem;
-  }
-  @media (min-width: 1200px) {
-    padding: .8rem;
-  }
 }
 .site-main {
   grid-column: 2 / span 3;
@@ -58,5 +51,15 @@ export default {
 
 .fade-enter {
   opacity: 0;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+    background-image: none !important;
+  }
+  .site-main {
+    grid-column: 1 / -1;
+  }
 }
 </style>

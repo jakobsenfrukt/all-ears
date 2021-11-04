@@ -90,7 +90,7 @@ export default {
   grid-column: 1 / -1;
   color: var(--color-highlight);
 }
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .program-grid {
     grid-template-columns: repeat(2, 1fr);
     column-gap: .5rem;
@@ -101,9 +101,4 @@ export default {
     }
   }
 }
-/*@media (max-width: 600px) {
-  .program-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}*/
 </style>

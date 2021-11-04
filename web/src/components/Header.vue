@@ -31,7 +31,7 @@
     text-decoration-thickness: var(--border-width);
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .site-header {
     grid-column: 1 / span 4;
     width: 100%;
@@ -41,10 +41,6 @@
     justify-content: space-between;
   }
   .nav-link {
-    text-decoration: underline;
-    text-underline-position: below;
-    text-underline-offset: .1rem;
-    text-decoration-thickness: var(--border-width);
     &:nth-of-type(2) {
       text-align: center;
     }

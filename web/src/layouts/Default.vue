@@ -1,21 +1,14 @@
 <template>
   <div class="layout" :class="page">
-    <Headline />
-    <Header />
+    <Headline class="headline" />
+    <Header class="header" />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
-        <div class="totop">
-          <button @click="toTop()" class="totop-button">
-            <span>Til toppen</span>
-            <svg class="totop-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
-            </svg>
-          </button>
-        </div>
+        <Totop />
       </main>
     </transition>
-    <Footer />
+    <Footer class="footer" />
   </div>
 </template>
 
@@ -31,23 +24,17 @@ query {
 import Headline from '~/components/Headline.vue'
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+import Totop from '@/components/Totop.vue'
 
 export default {
   components: {
     Headline,
     Header,
-    Footer
+    Footer,
+    Totop
   },
   props: {
     page: String
-  },
-  methods: {
-    toTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
-    }
   }
 }
 </script>
@@ -70,57 +57,39 @@ export default {
     background-image: url('/images/bg/bg-info.jpg');
   }
 
-  padding: .5rem;
+  padding: var(--spacing-m);
 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 1fr;
-
-  @media (min-width: 800px) {
-    padding: .6rem;
-  }
-  @media (min-width: 1200px) {
-    padding: .8rem;
-  }
 }
 .site-main {
   grid-column: 2 / span 3;
   grid-row: 2;
   min-height: 100vh;
+  margin-bottom: 2rem;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .layout {
     grid-template-rows: auto;
+    background-image: none !important;
   }
   .site-main {
     grid-column: 1 / -1;
     grid-row: 3;
   }
-}
-
-.totop {
-  width: 100%;
-  margin-top: 4rem;
-  padding: .5rem .5rem 0;
-  text-align: right;
-
-  &-button {
-    font-size: var(--font-l);
-    font-family: inherit;
-    border: none;
-    outline: none;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    cursor: pointer;
+  .header {
+    order: 1;
   }
-
-  &-icon {
-    display: inline-block;
-    width: 1.2rem;
-    height: 1.2rem;
-    margin: 0 0 .3rem .5rem;
-    vertical-align: middle;
+  .site-main {
+    order: 2;
+    grid-row: 2;
+  }
+  .headline {
+    order: 3;
+  }
+  .footer {
+    order: 4;
   }
 }
 

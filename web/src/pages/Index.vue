@@ -52,21 +52,16 @@ export default {
     z-index: 1;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .index-page {
     &-logo {
       position: fixed;
-      top: 5vh;
-      left: 12vw;
-      color: white;
-      width: 80vw;
+      top: 2rem;
+      left: 10%;
       height: auto;
+      width: 105%;
+      color: white;
       z-index: 1;
-    }
-    &-lineup {
-      text-align: left;
-      max-width: 90%;
-      margin: 26vh 0 0;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="headline">
+  <div class="headline" :class="{index: index}">
     <div class="headline-half headline-half--left">
       <a href="/">
         <span class="highlight">All</span>
@@ -21,6 +21,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    index: Boolean
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .headline {
   position: fixed;
@@ -39,21 +47,21 @@
     }
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .headline {
-    grid-row: span 1;
-    grid-column: 1 / -1;
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 1rem;
-    &-half {
-      &--right {
-        text-align: right;
+    margin-bottom: 6rem;
+    font-size: var(--font-xl);
+    grid-row: span 1;
+    &.index {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 1rem;
+      .headline-half {
+        &--right {
+          text-align: right;
+        }
       }
-    }
-    &--index {
-      background: none;
     }
   }
 }

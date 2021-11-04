@@ -55,8 +55,8 @@ export default {
 
   &-icon {
     display: inline-block;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1rem;
+    height: 1rem;
     margin: 0 .5rem .3rem;
     vertical-align: middle;
     transform: rotate(90deg);
@@ -71,6 +71,12 @@ export default {
     display: block;
     width: 2rem;
     height: 2rem;
+  }
+}
+@media (max-width: 800px) {
+  .site-footer {
+    position: absolute;
+    bottom: .75rem;
   }
 }
 </style>

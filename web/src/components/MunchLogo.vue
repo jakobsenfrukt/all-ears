@@ -19,4 +19,11 @@
     height: 100%;
   }
 }
+
+@media (max-width: 800px) {
+  .logo {
+    width: 4rem;
+    transform: translateY(-200%);
+  }
+}
 </style>

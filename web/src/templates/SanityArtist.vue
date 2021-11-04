@@ -120,7 +120,7 @@ query artist ($id: ID!) {
     }
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .artist {
     margin-top: -.5rem;
     &-image {
