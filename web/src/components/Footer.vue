@@ -1,11 +1,25 @@
 <template>
   <footer class="site-footer">
-    <div v-if="index" class="tickets">
-      <svg class="tickets-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
-      </svg>
-      <g-link to="/tickets">Get tickets</g-link>
-    </div>
+    <nav v-if="index" class="index-links">
+      <div class="link">
+        <svg class="link-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
+        </svg>
+        <g-link to="/artists">View lineup</g-link>
+      </div>
+      <div class="link">
+        <svg class="link-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
+        </svg>
+        <g-link to="/tickets">Get tickets</g-link>
+      </div>
+      <div class="link">
+        <svg class="link-icon" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z" fill="black"/>
+        </svg>
+        <g-link to="/info">More info</g-link>
+      </div>
+    </nav>
     <nav v-else class="some">
       <a :href="$static.general.social.instagram" aria-label="Instagram" class="some-link" target="_blank">
         Instagram
@@ -50,14 +64,17 @@ export default {
   grid-row: span 2;
   z-index: 10;
 }
-.tickets {
+.index-links {
+  
+}
+.link {
   font-size: var(--font-l);
 
   &-icon {
     display: inline-block;
     width: 1rem;
     height: 1rem;
-    margin: 0 .5rem .3rem;
+    margin: 0 .5rem .3rem 0;
     vertical-align: middle;
     transform: rotate(90deg);
   }

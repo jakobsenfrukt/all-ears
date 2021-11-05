@@ -55,7 +55,7 @@ export default {
 @media (max-width: 800px) {
   .index-page {
     &-logo {
-      position: fixed;
+      position: absolute;
       top: 2rem;
       left: 10%;
       height: auto;
