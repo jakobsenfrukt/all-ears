@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 
 const hiddenDocTypes = listItem =>
-  !['general', 'artist', 'venue', 'about'].includes(listItem.getId())
+  !['general', 'artist', 'venue', 'about', 'frontpage'].includes(listItem.getId())
 
 export default () =>
   S.list()
