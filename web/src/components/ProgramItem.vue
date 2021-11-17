@@ -8,7 +8,7 @@
       />
     </div>
     <div class="artist-text">
-      <span class="artist-concertstart">{{artist.concertStartTime}}</span>
+      <span class="artist-concertstart">{{ getConcertStartTime(artist.concertStart)}}</span>
       <h3 class="artist-name">{{ artist.title }} <sup class="nationality">({{ artist.nationality }})</sup></h3>
     </div>
     <g-link class="artist-link" :to="`/artists/${artist.slug.current}`">Link</g-link>
@@ -35,6 +35,18 @@ export default {
   },
   props: {
     artist: Object
+  },
+  methods: {
+    getConcertStartTime(concertStart) {
+      var date = new Date(concertStart)
+      var minute = date.getUTCMinutes();
+      var hour = date.getUTCHours() + 1;
+      if (minute > 0) {
+        return hour + ":" + minute;
+      } else {
+        return hour + ":00";
+      }
+    }
   }
 }
 </script>

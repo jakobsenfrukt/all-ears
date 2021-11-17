@@ -24,7 +24,7 @@ query {
         slug {
           current
         }
-        concertStart(format: "D. MMMM YYYY")
+        concertStart
         concertDate: concertStart(format: "dddd D. MMMM")
         concertStartTime: concertStart(format: "HH:mm")
         mainImage {

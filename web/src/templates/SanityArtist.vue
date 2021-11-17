@@ -10,7 +10,7 @@
       <div class="artist-heading">
         <h1 class="artist-name">{{ $page.artist.title }} <sup class="nationality">({{ $page.artist.nationality }})</sup></h1>
         <div class="artist-time">
-          <span>{{ $page.artist.concertStartTime }}</span> &mdash; <span>{{ $page.artist.concertDate }}</span>
+          <span>{{ getConcertStartTime($page.artist.concertStart) }}</span> &mdash; <span>{{ $page.artist.concertDate }}</span>
         </div>
       </div>
       <div class="artist-text artist-text-en">
@@ -38,6 +38,18 @@ export default {
   components: {
     BlockContent
   },
+  methods: {
+    getConcertStartTime(concertStart) {
+      var date = new Date(concertStart)
+      var minute = date.getUTCMinutes();
+      var hour = date.getUTCHours() + 1;
+      if (minute > 0) {
+        return hour + ":" + minute;
+      } else {
+        return hour + ":00";
+      }
+    }
+  },
   metaInfo() {
     return {
       title: this.$page.artist.title,
@@ -64,7 +76,7 @@ query artist ($id: ID!) {
   artist: sanityArtist (id: $id) {
     title
     nationality
-    concertStart(format: "D. MMMM YYYY")
+    concertStart
     concertDate: concertStart(format: "dddd D. MMMM")
     concertStartTime: concertStart(format: "HH:mm")
     venue {
