@@ -126,6 +126,13 @@ query artist ($id: ID!) {
     &-image {
       grid-column: 1 / span 6;
     }
+    &-text {
+      grid-column: 1 / -1;
+
+      &-no {
+        color: var(--color-darkgray);
+      }
+    }
   }
 }
 </style>

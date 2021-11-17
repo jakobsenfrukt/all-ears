@@ -10,6 +10,7 @@ import frontpage from './documents/frontpage'
 import artist from './documents/artist'
 import venue from './documents/venue'
 import about from './documents/about'
+import tickets from './documents/tickets'
 
 import body from './objects/body'
 import figure from './objects/figure'
@@ -30,6 +31,7 @@ export default createSchema({
     artist,
     venue,
     about,
+    tickets,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     body,
