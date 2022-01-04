@@ -1,5 +1,5 @@
 <template>
-  <div class="headline" :class="{index: index}">
+  <div class="headline" :class="{ index: index }">
     <div class="headline-half headline-half--left">
       <a href="/">
         <span class="highlight">All</span>
@@ -14,8 +14,8 @@
       <span class="highlight">MUNCH</span>
       <span>Oslo</span>
       <span>Norway</span>
-      <span class="highlight">14.–16.</span>
-      <span class="highlight">January</span>
+      <span class="highlight">20-22</span>
+      <span class="highlight">May</span>
       <span class="highlight">2022</span>
     </div>
   </div>
@@ -24,9 +24,9 @@
 <script>
 export default {
   props: {
-    index: Boolean
-  }
-}
+    index: Boolean,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
