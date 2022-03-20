@@ -1,6 +1,10 @@
 <template>
   <section class="program">
-    <div v-for="(artists, day, index) in artistsByDay()" :key="index" class="program-grid">
+    <div
+      v-for="(artists, day, index) in artistsByDay()"
+      :key="index"
+      class="program-grid"
+    >
       <div class="program-day">
         {{ day }}
       </div>
@@ -56,25 +60,26 @@ query {
 </static-query>
 
 <script>
-import ProgramItem from '@/components/ProgramItem'
+import ProgramItem from "@/components/ProgramItem";
 
 export default {
   components: {
-    ProgramItem
+    ProgramItem,
   },
   methods: {
     artistsByDay() {
       const groupBy = function(artists, day) {
         return artists.reduce(function(result, artist) {
-          (result[artist.node[day]] = result[artist.node[day]] || []).push(artist);
+          (result[artist.node[day]] = result[artist.node[day]] || []).push(
+            artist
+          );
           return result;
         }, {});
-      }
-      console.log(groupBy(this.$static.artists.edges, 'concertDate'))
-      return groupBy(this.$static.artists.edges, 'concertDate')
-    }
-  }
-}
+      };
+      return groupBy(this.$static.artists.edges, "concertDate");
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -93,11 +98,11 @@ export default {
 @media (max-width: 800px) {
   .program-grid {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: .5rem;
+    column-gap: 0.5rem;
   }
   .program-day {
     &:after {
-      margin-left: .3rem;
+      margin-left: 0.3rem;
     }
   }
 }
