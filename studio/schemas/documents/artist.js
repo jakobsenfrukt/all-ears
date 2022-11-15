@@ -21,6 +21,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: Rule => Rule.required().error('Slug is a required field. Click the Generate button to create a slug.')
     },
     {
       name: 'venue',
