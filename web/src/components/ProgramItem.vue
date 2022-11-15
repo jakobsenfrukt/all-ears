@@ -3,15 +3,27 @@
     <div class="artist-image">
       <g-image
         v-if="artist.mainImage"
-        :src="$urlForImage(artist.mainImage, $static.metadata.sanityOptions).width(400).auto('format').url()"
+        :src="
+          $urlForImage(artist.mainImage, $static.metadata.sanityOptions)
+            .width(400)
+            .auto('format')
+            .url()
+        "
         :alt="artist.mainImage.alt"
       />
     </div>
     <div class="artist-text">
-      <span class="artist-concertstart">{{ getConcertStartTime(artist.concertStart)}}</span>
-      <h3 class="artist-name">{{ artist.title }} <sup class="nationality">({{ artist.nationality }})</sup></h3>
+      <span class="artist-concertstart">{{
+        getConcertStartTime(artist.concertStart)
+      }}</span>
+      <h3 class="artist-name">
+        {{ artist.title }}
+        <sup class="nationality">({{ artist.nationality }})</sup>
+      </h3>
     </div>
-    <g-link class="artist-link" :to="`/artists/${artist.slug.current}`">Link</g-link>
+    <g-link class="artist-link" :to="`/artists/${artist.slug.current}`"
+      >Link</g-link
+    >
   </article>
 </template>
 
@@ -27,18 +39,18 @@
 </static-query>
 
 <script>
-import BlockContent from '@/components/BlockContent'
+import BlockContent from "@/components/BlockContent";
 
 export default {
   components: {
-    BlockContent
+    BlockContent,
   },
   props: {
-    artist: Object
+    artist: Object,
   },
   methods: {
     getConcertStartTime(concertStart) {
-      var date = new Date(concertStart)
+      var date = new Date(concertStart);
       var minute = date.getUTCMinutes();
       var hour = date.getUTCHours() + 1;
       if (minute > 0) {
@@ -46,9 +58,9 @@ export default {
       } else {
         return hour + ":00";
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -56,9 +68,9 @@ export default {
   grid-column: span 1;
   display: block;
   position: relative;
-  
+
   &-text {
-    padding-top: .2rem;
+    padding-top: 0.2rem;
   }
   &-name {
     font-size: var(--font-m);
@@ -66,7 +78,7 @@ export default {
     .nationality {
       display: inline-block;
       vertical-align: top;
-      font-size: .5em;
+      font-size: 0.5em;
       line-height: 2;
     }
   }
