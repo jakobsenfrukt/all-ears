@@ -1,12 +1,10 @@
 <template>
   <div class="layout">
-    <Headline index />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
       </main>
     </transition>
-    <Footer index />
   </div>
 </template>
 
@@ -19,19 +17,19 @@ query {
 </static-query>
 
 <script>
-import Headline from '~/components/Headline.vue'
-import Footer from '~/components/Footer.vue'
+import Headline from "~/components/Headline.vue";
+import Footer from "~/components/Footer.vue";
 export default {
   components: {
     Headline,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .layout {
-  background-image: url('/images/bg/bg-index.jpg');
+  background-image: url("/images/bg/bg-index.jpg");
   background-size: 1900px 1200px;
   background-attachment: fixed;
   padding: var(--spacing-m);
@@ -46,7 +44,7 @@ export default {
 }
 
 .fade-enter-active {
-  transition: opacity .8s;
+  transition: opacity 0.8s;
 }
 
 .fade-enter {

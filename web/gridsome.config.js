@@ -15,10 +15,6 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteName: 'All Ears',
 
-  templates: {
-    SanityArtist: '/artists/:slug__current'
-  },
-
   plugins: [
     {
       use: 'gridsome-source-sanity',
