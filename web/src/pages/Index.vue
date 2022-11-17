@@ -1,30 +1,28 @@
 <template>
   <IndexLayout class="index-page">
-    <Background page="index" />
-    <Logo noise class="index-page-logo" />
     <Lineup />
     <MunchLogo />
   </IndexLayout>
 </template>
 
 <script>
-import IndexLayout from '@/layouts/Index'
-import Background from '@/components/Background'
-import Headline from '@/components/Headline'
-import Logo from '@/components/Logo'
-import Lineup from '@/components/Lineup'
-import MunchLogo from '@/components/MunchLogo'
+import IndexLayout from "@/layouts/Index";
+import Background from "@/components/Background";
+import Headline from "@/components/Headline";
+import Logo from "@/components/Logo";
+import Lineup from "@/components/Lineup";
+import MunchLogo from "@/components/MunchLogo";
 
 export default {
   metaInfo: {
-    title: 'Home',
+    title: "Home",
     meta: [
-        {
-          name: 'og:image',
-          key: 'og:image',
-          content: 'https://all-ears.no/images/og-img.jpg'
-        }
-      ]
+      {
+        name: "og:image",
+        key: "og:image",
+        content: "https://all-ears.no/images/og-img.jpg",
+      },
+    ],
   },
   components: {
     IndexLayout,
@@ -32,9 +30,9 @@ export default {
     Headline,
     Logo,
     Lineup,
-    MunchLogo
-  }
-}
+    MunchLogo,
+  },
+};
 </script>
 
 <style lang="scss" scoped>

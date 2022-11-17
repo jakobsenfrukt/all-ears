@@ -1,6 +1,5 @@
 <template>
   <Layout page="tickets">
-    <Background page="tickets" />
     <section class="tickets-content">
       <block-content :blocks="$page.tickets._rawBody" />
     </section>
@@ -20,17 +19,21 @@
           />
         </svg>
         <a
-          href="https://shop.munchmuseet.no/all-ears-festival-for-improvisert-musikk-festivalpass?___store=en"
+          :href="$page.tickets.festivalpass.url"
           target="_blank"
           class="ticket-link"
-          >Festival pass</a
+          >{{ $page.tickets.festivalpass.text }}</a
         >
-        <p class="prices">Adult NOK 1200 / Student NOK 900</p>
+        <p class="prices">{{ $page.tickets.festivalpass.price }}</p>
       </div>
       <div>
         <h2>Day pass</h2>
         <ul class="ticket-option-list">
-          <li class="ticket-option">
+          <li
+            v-for="(item, index) in $page.tickets.daypasses"
+            :key="index"
+            class="ticket-option"
+          >
             <svg
               class="link-icon"
               viewBox="0 0 500 500"
@@ -44,57 +47,10 @@
                 fill="black"
               />
             </svg>
-            <a
-              href="https://shop.munchmuseet.no/all-ears-festival-for-improvisert-musikk-dagspass-fredag?___store=en"
-              target="_blank"
-              class="ticket-link"
-              >Friday 20 May</a
-            >
-            <p class="prices">Adult NOK 600 / Student NOK 450</p>
-          </li>
-          <li class="ticket-option">
-            <svg
-              class="link-icon"
-              viewBox="0 0 500 500"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z"
-                fill="black"
-              />
-            </svg>
-            <a
-              href="https://shop.munchmuseet.no/all-ears-festival-for-improvisert-musikk-dagspass-l-rdag?___store=en"
-              target="_blank"
-              class="ticket-link"
-              >Saturday 21 May</a
-            >
-            <p class="prices">Adult NOK 600 / Student NOK 450</p>
-          </li>
-          <li class="ticket-option">
-            <svg
-              class="link-icon"
-              viewBox="0 0 500 500"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z"
-                fill="black"
-              />
-            </svg>
-            <a
-              href="https://shop.munchmuseet.no/all-ears-festival-for-improvisert-musikk-dagspass-s-ndag?___store=en"
-              target="_blank"
-              class="ticket-link"
-              >Sunday 22 May</a
-            >
-            <p class="prices">Adult NOK 400 / Student NOK 300</p>
+            <a :href="item.url" target="_blank" class="ticket-link">{{
+              item.text
+            }}</a>
+            <p class="prices">{{ item.price }}</p>
           </li>
         </ul>
       </div>
@@ -107,6 +63,16 @@ query {
   tickets: sanityTickets (id: "tickets") {
     title
     _rawBody
+    festivalpass {
+      text
+      url
+      price
+    }
+    daypasses {
+      text
+      url
+      price
+    }
   }
 }
 </page-query>
@@ -157,5 +123,12 @@ export default {
   margin: 0 0.5rem 0.3rem 0;
   vertical-align: middle;
   transform: rotate(90deg);
+}
+@media (max-width: 800px) {
+  .tickets {
+    &-content {
+      margin-right: 0;
+    }
+  }
 }
 </style>

@@ -3,14 +3,23 @@
     <div class="artist">
       <img
         v-if="$page.artist.mainImage"
-        :src="$urlForImage($page.artist.mainImage, $page.metadata.sanityOptions).width(1200).auto('format').url()"
+        :src="
+          $urlForImage($page.artist.mainImage, $page.metadata.sanityOptions)
+            .width(1200)
+            .auto('format')
+            .url()
+        "
         :alt="$page.artist.mainImage.alt"
         class="artist-image"
       />
       <div class="artist-heading">
-        <h1 class="artist-name">{{ $page.artist.title }} <sup class="nationality">({{ $page.artist.nationality }})</sup></h1>
+        <h1 class="artist-name">
+          {{ $page.artist.title }}
+          <sup class="nationality">({{ $page.artist.nationality }})</sup>
+        </h1>
         <div class="artist-time">
-          <span>{{ getConcertStartTime($page.artist.concertStart) }}</span> &mdash; <span>{{ $page.artist.concertDate }}</span>
+          <span>{{ getConcertStartTime($page.artist.concertStart) }}</span>
+          &mdash; <span>{{ $page.artist.concertDate }}</span>
         </div>
       </div>
       <div class="artist-text artist-text-en">
@@ -32,15 +41,17 @@
 </template>
 
 <script>
-import BlockContent from '~/components/BlockContent'
+import Background from "~/components/Background";
+import BlockContent from "~/components/BlockContent";
 
 export default {
   components: {
-    BlockContent
+    Background,
+    BlockContent,
   },
   methods: {
     getConcertStartTime(concertStart) {
-      var date = new Date(concertStart)
+      var date = new Date(concertStart);
       var minute = date.getUTCMinutes();
       var hour = date.getUTCHours() + 1;
       if (minute > 0) {
@@ -48,21 +59,23 @@ export default {
       } else {
         return hour + ":00";
       }
-    }
+    },
   },
   metaInfo() {
     return {
       title: this.$page.artist.title,
       meta: [
         {
-          name: 'og:image',
-          key: 'og:image',
-          content: this.$page.artist.mainImage ? this.$page.artist.mainImage.asset.url : ' '
-        }
-      ]
-    }
-  }
-}
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.artist.mainImage
+            ? this.$page.artist.mainImage.asset.url
+            : " ",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <page-query>
@@ -117,7 +130,7 @@ query artist ($id: ID!) {
     .nationality {
       display: inline-block;
       vertical-align: top;
-      font-size: .5em;
+      font-size: 0.5em;
       line-height: 2;
     }
   }
@@ -134,7 +147,7 @@ query artist ($id: ID!) {
 }
 @media (max-width: 800px) {
   .artist {
-    margin-top: -.5rem;
+    margin-top: -0.5rem;
     &-image {
       grid-column: 1 / span 6;
     }

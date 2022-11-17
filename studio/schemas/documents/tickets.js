@@ -12,6 +12,20 @@ export default {
       name: 'body',
       title: 'Content',
       type: 'body',
+    },
+    {
+      name: 'festivalpass',
+      title: 'Festival pass',
+      type: 'ticketItem',
+    },
+    {
+      title: 'Day passes',
+      name: 'daypasses',
+      type: 'array',
+      of: [{
+        name: 'ticketItem',
+        type: 'ticketItem',
+      }],
     }
   ]
 }

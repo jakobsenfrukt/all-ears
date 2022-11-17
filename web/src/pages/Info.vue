@@ -1,12 +1,6 @@
 <template>
   <Layout page="info">
-    <Background page="info" />
     <section class="about">
-      <!--<nav class="about-nav">
-        <a @click="toAnchor('#practical')">Practical</a>
-        <a @click="toAnchor('#about')">About</a>
-        <a @click="toAnchor('#contact')">Contact</a>
-      </nav>-->
       <div class="content about-content">
         <section class="about-section">
           <block-content :blocks="$page.about._rawLead" class="about-lead" />
@@ -41,25 +35,25 @@ query {
 </page-query>
 
 <script>
-import Background from '@/components/Background'
-import BlockContent from '@/components/BlockContent'
+import Background from "@/components/Background";
+import BlockContent from "@/components/BlockContent";
 
 export default {
   components: {
     Background,
-    BlockContent
+    BlockContent,
   },
   methods: {
     toAnchor(anchor) {
       document.querySelector(anchor).scrollIntoView({
-          behavior: 'smooth'
-      })
-    }
+        behavior: "smooth",
+      });
+    },
   },
   metaInfo: {
-    title: 'Info'
-  }
-}
+    title: "Info",
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -93,7 +87,7 @@ export default {
     grid-column: 3 / span 1;
     width: calc(25%);
     position: fixed;
-    right: .75rem;
+    right: 0.75rem;
     padding-left: 1rem;
     color: var(--color-highlight);
 
@@ -104,7 +98,7 @@ export default {
       &:hover {
         text-decoration: underline;
         text-underline-position: below;
-        text-underline-offset: .1rem;
+        text-underline-offset: 0.1rem;
         text-decoration-thickness: var(--border-width);
       }
     }

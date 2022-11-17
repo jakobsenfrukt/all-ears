@@ -1,5 +1,6 @@
 <template>
   <div class="layout" :class="page">
+    <Background />
     <Headline class="headline" />
     <Header class="header" />
     <transition name="fade" appear>
@@ -21,44 +22,29 @@ query {
 </static-query>
 
 <script>
-import Headline from '~/components/Headline.vue'
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
-import Totop from '@/components/Totop.vue'
+import Background from "@/components/Background.vue";
+import Headline from "~/components/Headline.vue";
+import Header from "~/components/Header.vue";
+import Footer from "~/components/Footer.vue";
+import Totop from "@/components/Totop.vue";
 
 export default {
   components: {
+    Background,
     Headline,
     Header,
     Footer,
-    Totop
+    Totop,
   },
   props: {
-    page: String
-  }
-}
+    page: String,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .layout {
-  background-image: url('/images/bg/bg-5.jpg');
-  background-size: 1900px 1200px;
-  background-attachment: fixed;
-  &.index {
-    background-image: url('/images/bg/bg-index.jpg');
-  }
-  &.artists {
-    background-image: url('/images/bg/bg-artists.jpg');
-  }
-  &.tickets {
-    background-image: url('/images/bg/bg-tickets.jpg');
-  }
-  &.info {
-    background-image: url('/images/bg/bg-info.jpg');
-  }
-
   padding: var(--spacing-m);
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 1fr;
@@ -94,7 +80,7 @@ export default {
 }
 
 .fade-enter-active {
-  transition: opacity .8s;
+  transition: opacity 0.8s;
 }
 
 .fade-enter {

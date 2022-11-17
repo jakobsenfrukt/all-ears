@@ -12,17 +12,23 @@
   --border-width: .12em;
 
   // colors
+  --color-black: #111;
+  --color-white: #eee;
+
+  // 2022
   --color-green: #A5B455;
   --color-lightgray: #EBEBEB;
   --color-darkgray: #646464;
-  --color-black: #111;
-  --color-white: #eee;
+
+  // 2023
+  --color-yellow: #B2A13A;
+  --color-darkgray: rgba(0, 0, 0, .5);
 }
 
 body {
-  --color-background: var(--color-lightgray);
+  --color-background: var(--color-yellow);
   --color-text: var(--color-black);
-  --color-highlight: var(--color-green);
+  --color-highlight: var(--color-white);
 }
 
 @media (max-width: 800px) {
@@ -32,6 +38,7 @@ body {
     --spacing-m: .6rem;
   }
 }
+
 @media (max-width: 600px) {
   :root {
     --font-l: 1rem;

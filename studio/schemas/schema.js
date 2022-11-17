@@ -16,6 +16,7 @@ import body from './objects/body'
 import figure from './objects/figure'
 import lead from './objects/lead'
 import social from './objects/social'
+import ticketItem from './objects/ticketItem'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,6 +38,7 @@ export default createSchema({
     body,
     figure,
     lead,
-    social
+    social,
+    ticketItem
   ]),
 })

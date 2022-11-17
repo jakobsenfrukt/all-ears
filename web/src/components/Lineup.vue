@@ -2,9 +2,11 @@
   <section class="lineup">
     <ul class="lineup-list">
       <li v-for="artist in $static.frontpage.lineup" :key="artist.id">
-        <g-link to="/artists">{{ artist.title }}  <sup class="nationality">({{ artist.nationality }})</sup></g-link>
+        <g-link to="/artists"
+          >{{ artist.title }}
+          <sup class="nationality">({{ artist.nationality }})</sup></g-link
+        >
       </li>
-      <!--<li><g-link to="/artists">View all</g-link></li>-->
     </ul>
   </section>
 </template>
@@ -32,6 +34,14 @@ query {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    li {
+      color: var(--color-highlight);
+
+      &:nth-of-type(even) {
+        color: var(--color-text);
+      }
+    }
   }
   a {
     font-size: var(--font-l);
@@ -44,7 +54,7 @@ query {
 .nationality {
   display: inline-block;
   vertical-align: top;
-  font-size: .5em;
+  font-size: 0.5em;
   line-height: 2;
 }
 @media (max-width: 800px) {

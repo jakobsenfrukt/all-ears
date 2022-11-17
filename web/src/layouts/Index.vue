@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <Background />
     <Headline index />
     <transition name="fade" appear>
       <main class="site-main">
@@ -19,23 +20,21 @@ query {
 </static-query>
 
 <script>
-import Headline from '~/components/Headline.vue'
-import Footer from '~/components/Footer.vue'
+import Background from "@/components/Background.vue";
+import Headline from "~/components/Headline.vue";
+import Footer from "~/components/Footer.vue";
 export default {
   components: {
+    Background,
     Headline,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .layout {
-  background-image: url('/images/bg/bg-index.jpg');
-  background-size: 1900px 1200px;
-  background-attachment: fixed;
   padding: var(--spacing-m);
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 1fr;
@@ -46,7 +45,7 @@ export default {
 }
 
 .fade-enter-active {
-  transition: opacity .8s;
+  transition: opacity 0.8s;
 }
 
 .fade-enter {

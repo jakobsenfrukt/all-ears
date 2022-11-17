@@ -1,19 +1,20 @@
 <template>
   <div class="background" :class="page">
-    <img v-if="page === 'index'" src="/images/bg/bg-index.jpg" />
+    <img src="/images/bg-2023.png" />
+    <!--<img v-if="page === 'index'" src="/images/bg/bg-index.jpg" />
     <img v-else-if="page === 'artists'" src="/images/bg/bg-artists.jpg" />
     <img v-else-if="page === 'tickets'" src="/images/bg/bg-tickets.jpg" />
     <img v-else-if="page === 'info'" src="/images/bg/bg-info.jpg" />
-    <img v-else src="/images/bg/bg-5.jpg" />
+    <img v-else src="/images/bg/bg-5.jpg" />-->
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    page: String
-  }
-}
+    page: String,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -28,18 +29,20 @@ export default {
 
   img {
     position: absolute;
-    width: 900px;
-    height: 100%;
+    width: 100%;
+    height: 105%;
     object-fit: cover;
     top: 0;
     left: 0;
+    object-position: 20% 0;
   }
-
-  display: none;
 }
 @media (max-width: 800px) {
   .background {
     display: block;
+    img {
+      object-position: 30% 0;
+    }
   }
 }
 </style>
