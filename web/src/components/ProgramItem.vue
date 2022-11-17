@@ -1,15 +1,10 @@
 <template>
   <article class="artist">
     <div class="artist-image">
-      <g-image
+      <SuperImage
         v-if="artist.mainImage"
-        :src="
-          $urlForImage(artist.mainImage, $static.metadata.sanityOptions)
-            .width(400)
-            .auto('format')
-            .url()
-        "
-        :alt="artist.mainImage.alt"
+        :image="artist.mainImage"
+        :width="400"
       />
     </div>
     <div class="artist-text">
@@ -40,10 +35,12 @@
 
 <script>
 import BlockContent from "@/components/BlockContent";
+import SuperImage from "@/components/SuperImage";
 
 export default {
   components: {
     BlockContent,
+    SuperImage,
   },
   props: {
     artist: Object,
@@ -89,7 +86,7 @@ export default {
     background: var(--color-darkgray);
     position: relative;
 
-    img {
+    figure {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -98,6 +95,7 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
+      padding-top: 0 !important;
     }
   }
   &-concertstart {

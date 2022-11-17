@@ -1,15 +1,10 @@
 <template>
   <Layout>
     <div class="artist">
-      <img
+      <SuperImage
         v-if="$page.artist.mainImage"
-        :src="
-          $urlForImage($page.artist.mainImage, $page.metadata.sanityOptions)
-            .width(1200)
-            .auto('format')
-            .url()
-        "
-        :alt="$page.artist.mainImage.alt"
+        :image="$page.artist.mainImage"
+        :width="900"
         class="artist-image"
       />
       <div class="artist-heading">
@@ -43,11 +38,13 @@
 <script>
 import Background from "~/components/Background";
 import BlockContent from "~/components/BlockContent";
+import SuperImage from "~/components/SuperImage";
 
 export default {
   components: {
     Background,
     BlockContent,
+    SuperImage,
   },
   methods: {
     getConcertStartTime(concertStart) {
@@ -99,6 +96,12 @@ query artist ($id: ID!) {
       asset {
         _id
         url
+        metadata {
+          lqip
+          dimensions {
+            aspectRatio
+          }
+        }
       }
       alt
     }

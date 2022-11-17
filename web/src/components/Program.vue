@@ -35,6 +35,12 @@ query {
           asset {
             _id
             url
+            metadata {
+              lqip
+              dimensions {
+                aspectRatio
+              }
+            }
           }
           caption
           alt
