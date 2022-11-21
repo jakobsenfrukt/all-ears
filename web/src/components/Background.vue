@@ -1,6 +1,7 @@
 <template>
   <div class="background" :class="page">
-    <img src="/images/bg-2023.png" />
+    <img v-if="page === 'index'" src="/images/bg-2023.png" />
+    <img v-else src="/images/bg-2023-simple.png" />
     <!--<img v-if="page === 'index'" src="/images/bg/bg-index.jpg" />
     <img v-else-if="page === 'artists'" src="/images/bg/bg-artists.jpg" />
     <img v-else-if="page === 'tickets'" src="/images/bg/bg-tickets.jpg" />

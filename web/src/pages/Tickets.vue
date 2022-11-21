@@ -4,7 +4,7 @@
       <block-content :blocks="$page.tickets._rawBody" />
     </section>
     <section class="ticket-options">
-      <div class="ticket-option">
+      <div class="ticket-option" v-if="$page.tickets.festivalpass.url">
         <svg
           class="link-icon"
           viewBox="0 0 500 500"
@@ -26,7 +26,7 @@
         >
         <p class="prices">{{ $page.tickets.festivalpass.price }}</p>
       </div>
-      <div>
+      <div v-if="$page.tickets.daypasses.some((i) => i.url !== null)">
         <h2>Day pass</h2>
         <ul class="ticket-option-list">
           <li
@@ -34,23 +34,25 @@
             :key="index"
             class="ticket-option"
           >
-            <svg
-              class="link-icon"
-              viewBox="0 0 500 500"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z"
-                fill="black"
-              />
-            </svg>
-            <a :href="item.url" target="_blank" class="ticket-link">{{
-              item.text
-            }}</a>
-            <p class="prices">{{ item.price }}</p>
+            <template v-if="item.url">
+              <svg
+                class="link-icon"
+                viewBox="0 0 500 500"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M482.441 232.441L434.065 280.817L284.207 130.961L284.207 500L215.793 500L215.793 130.959L65.9348 280.817L17.5587 232.441L201.624 48.3765L201.624 48.376L250 -0.000101713L482.441 232.441Z"
+                  fill="black"
+                />
+              </svg>
+              <a :href="item.url" target="_blank" class="ticket-link">{{
+                item.text
+              }}</a>
+              <p class="prices">{{ item.price }}</p>
+            </template>
           </li>
         </ul>
       </div>

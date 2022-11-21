@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Background />
+    <Background page="index" />
     <Headline index />
     <transition name="fade" appear>
       <main class="site-main">
