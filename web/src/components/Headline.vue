@@ -14,9 +14,9 @@
       <span class="highlight">MUNCH</span>
       <span>Oslo</span>
       <span>Norway</span>
-      <span class="highlight">20-22</span>
-      <span class="highlight">May</span>
-      <span class="highlight">2022</span>
+      <span class="highlight">13-15</span>
+      <span class="highlight">January</span>
+      <span class="highlight">2023</span>
     </div>
   </div>
 </template>
