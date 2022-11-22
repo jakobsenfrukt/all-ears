@@ -7,6 +7,8 @@
     >
       <div class="program-day">
         {{ day }}
+        {{ getProgramStartTime(artists[0].node.concertStart) }}
+        ({{ getOpenTime(artists[0].node.concertStart) }})
       </div>
       <ProgramItem
         v-for="artist in artists"
@@ -29,7 +31,7 @@ query {
           current
         }
         concertStart
-        concertDate: concertStart(format: "dddd D. MMMM")
+        concertDate: concertStart(format: "dddd D MMMM")
         concertStartTime: concertStart(format: "HH:mm")
         mainImage {
           asset {
@@ -83,6 +85,26 @@ export default {
         }, {});
       };
       return groupBy(this.$static.artists.edges, "concertDate");
+    },
+    getProgramStartTime(firstConcertStart) {
+      var date = new Date(firstConcertStart);
+      var minute = date.getUTCMinutes();
+      var hour = date.getUTCHours() + 1;
+      if (minute > 0) {
+        return hour + ":" + minute;
+      } else {
+        return hour + ":00";
+      }
+    },
+    getOpenTime(firstConcertStart) {
+      var date = new Date(firstConcertStart);
+      var minute = date.getUTCMinutes();
+      var hour = date.getUTCHours();
+      if (minute > 0) {
+        return hour + ":" + minute;
+      } else {
+        return hour + ":00";
+      }
     },
   },
 };

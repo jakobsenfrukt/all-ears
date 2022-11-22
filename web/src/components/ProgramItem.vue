@@ -8,9 +8,9 @@
       />
     </div>
     <div class="artist-text">
-      <span class="artist-concertstart">{{
+      <!--<span class="artist-concertstart">{{
         getConcertStartTime(artist.concertStart)
-      }}</span>
+      }}</span>-->
       <h3 class="artist-name">
         {{ artist.title }}
         <sup class="nationality">({{ artist.nationality }})</sup>

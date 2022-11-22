@@ -13,8 +13,8 @@
           <sup class="nationality">({{ $page.artist.nationality }})</sup>
         </h1>
         <div class="artist-time">
-          <span>{{ getConcertStartTime($page.artist.concertStart) }}</span>
-          &mdash; <span>{{ $page.artist.concertDate }}</span>
+          <!--<span>{{ getConcertStartTime($page.artist.concertStart) }}</span>-->
+          <span>{{ $page.artist.concertDate }}</span>
         </div>
       </div>
       <div class="artist-text artist-text-en">
