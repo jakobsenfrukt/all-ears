@@ -30,6 +30,11 @@ export default {
   top: 0;
   left: 0;
   z-index: -1;
+  background-color: var(--color-red);
+
+  &.index {
+    background-color: var(--color-blue);
+  }
 
   img {
     position: absolute;
