@@ -46,6 +46,9 @@ export default {
       text-decoration: none;
     }
   }
+  &.index {
+    padding: var(--spacing-m);
+  }
 }
 @media (max-width: 800px) {
   .headline {
@@ -57,6 +60,7 @@ export default {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       margin-bottom: 1rem;
+      padding: var(--spacing-s);
       .headline-half {
         &--right {
           text-align: right;

@@ -23,11 +23,15 @@
   // 2023
   --color-yellow: #B2A13A;
   --color-darkgray: rgba(0, 0, 0, .5);
+
+  // 2024
+  --color-red: #922A29;
+  --font-l: 1.2rem;
 }
 
 body {
-  --color-background: var(--color-yellow);
-  --color-text: var(--color-black);
+  --color-background: var(--color-red);
+  --color-text: var(--color-white);
   --color-highlight: var(--color-white);
 }
 
