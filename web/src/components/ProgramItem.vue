@@ -5,6 +5,7 @@
         v-if="artist.mainImage"
         :image="artist.mainImage"
         :width="400"
+        :height="300"
       />
     </div>
     <div class="artist-text">
