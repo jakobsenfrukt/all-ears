@@ -27,7 +27,7 @@
   &:hover {
     text-decoration: underline;
     text-underline-position: below;
-    text-underline-offset: .1rem;
+    text-underline-offset: 0.1rem;
     text-decoration-thickness: var(--border-width);
   }
 }

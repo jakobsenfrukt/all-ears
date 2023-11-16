@@ -14,6 +14,11 @@ export default {
         ]
       }],
       validation: Rule => Rule.unique()
-    }
+    },
+    {
+      title: 'Other events',
+      name: 'body',
+      type: 'body',
+    },
   ]
 }

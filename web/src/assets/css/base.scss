@@ -6,7 +6,7 @@
 
 html {
   min-height: 100%;
-  font-size: calc(24px + 6 * (100vw - 420px) / 1200);
+  font-size: calc(22px + 6 * (100vw - 420px) / 1200);
 }
 
 body {
@@ -23,6 +23,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
     text-underline-position: below;

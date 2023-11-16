@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import general from './documents/general'
 import frontpage from './documents/frontpage'
 import artist from './documents/artist'
+import event from './documents/event'
 import venue from './documents/venue'
 import about from './documents/about'
 import tickets from './documents/tickets'
@@ -30,6 +31,7 @@ export default createSchema({
     general,
     frontpage,
     artist,
+    event,
     venue,
     about,
     tickets,

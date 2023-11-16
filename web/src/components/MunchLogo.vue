@@ -13,7 +13,7 @@
 .logo {
   color: var(--color-text);
   width: 5rem;
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   right: 1rem;
   svg {

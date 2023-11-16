@@ -16,7 +16,8 @@ module.exports = {
   siteName: 'All Ears',
 
   templates: {
-    SanityArtist: '/artists/:slug__current'
+    SanityArtist: '/artists/:slug__current',
+    SanityEvent: '/events/:slug__current'
   },
 
   plugins: [

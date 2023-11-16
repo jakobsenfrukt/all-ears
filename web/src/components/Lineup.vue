@@ -8,6 +8,7 @@
         >
       </li>
     </ul>
+    <OtherEvents hideHeading />
   </section>
 </template>
 
@@ -23,16 +24,27 @@ query {
 }
 </static-query>
 
+<script>
+import OtherEvents from "@/components/OtherEvents";
+
+export default {
+  components: {
+    OtherEvents,
+  },
+};
+</script>
+
 <style lang="scss" scoped>
 .lineup {
-  margin: 0;
+  margin: 0 0 0 auto;
   color: var(--color-highlight);
   text-align: right;
   position: relative;
   z-index: 100;
+  max-width: 20rem;
   &-list {
     list-style: none;
-    margin: 0;
+    margin: 0 0 2rem;
     padding: 0;
 
     li {
