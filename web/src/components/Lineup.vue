@@ -71,6 +71,7 @@ export default {
 }
 @media (max-width: 800px) {
   .lineup {
+    margin: 0;
     text-align: left;
     margin-top: 60vw;
     a {

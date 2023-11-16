@@ -26,7 +26,7 @@
 @media (max-width: 800px) {
   .logo {
     width: 4rem;
-    transform: translateY(-320%);
+    position: absolute;
   }
 }
 </style>
