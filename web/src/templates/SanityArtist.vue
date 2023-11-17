@@ -144,7 +144,7 @@ query artist ($id: ID!) {
     grid-column: span 3;
 
     &-no {
-      color: var(--color-darkgray);
+      color: #bbb;
     }
   }
 }
