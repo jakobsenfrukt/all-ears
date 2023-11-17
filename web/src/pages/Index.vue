@@ -5,6 +5,19 @@
   </IndexLayout>
 </template>
 
+<page-query>
+query {
+  frontpage: sanityFrontpage (id: "frontpage") {
+    ogimg {
+      asset {
+        _id
+        url
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
 import IndexLayout from "@/layouts/Index";
 import Background from "@/components/Background";
@@ -14,15 +27,17 @@ import Lineup from "@/components/Lineup";
 import MunchLogo from "@/components/MunchLogo";
 
 export default {
-  metaInfo: {
-    title: "Home",
-    meta: [
-      {
-        name: "og:image",
-        key: "og:image",
-        content: "https://all-ears.no/images/og-img.jpg",
-      },
-    ],
+  metaInfo() {
+    return {
+      title: "Home",
+      meta: [
+        {
+          name: "og:image",
+          key: "og:image",
+          content: this.$page.frontpage.ogimg.asset.url,
+        },
+      ],
+    };
   },
   components: {
     IndexLayout,

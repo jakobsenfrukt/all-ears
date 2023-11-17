@@ -16,9 +16,9 @@ export default {
       validation: Rule => Rule.unique()
     },
     {
-      title: 'Other events',
-      name: 'body',
-      type: 'body',
-    },
+      title: 'Social sharing image',
+      name: 'ogimg',
+      type: 'image'
+    }
   ]
 }
