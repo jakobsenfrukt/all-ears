@@ -89,9 +89,6 @@ query artist ($id: ID!) {
     concertStart
     concertDate: concertStart(format: "dddd D. MMMM")
     concertStartTime: concertStart(format: "HH:mm")
-    venue {
-      title
-    }
     mainImage {
       asset {
         _id

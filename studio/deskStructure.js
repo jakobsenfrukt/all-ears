@@ -1,7 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 
 const hiddenDocTypes = listItem =>
-  !['general', 'artist', 'event', 'venue', 'about', 'frontpage', 'tickets'].includes(listItem.getId())
+  !['general', 'artist', 'event', 'about', 'frontpage', 'tickets'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -33,10 +33,6 @@ export default () =>
         .title('Other events')
         .schemaType('event')
         .child(S.documentTypeList('event').title('Events')),
-      S.listItem()
-        .title('Venues')
-        .schemaType('venue')
-        .child(S.documentTypeList('venue').title('Venues')),
       S.listItem()
         .title('Info')
         .child(

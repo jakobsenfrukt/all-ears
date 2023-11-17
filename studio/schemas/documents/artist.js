@@ -24,12 +24,6 @@ export default {
       validation: Rule => Rule.required().error('Slug is a required field. Click the Generate button to create a slug.')
     },
     {
-      name: 'venue',
-      title: 'Venue',
-      type: 'reference',
-      to: [{type: 'venue'}],
-    },
-    {
       name: 'concertStart',
       title: 'Concert start',
       type: 'datetime',
