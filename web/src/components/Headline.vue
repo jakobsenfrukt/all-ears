@@ -11,12 +11,13 @@
       <span>music</span>
     </div>
     <div class="headline-half headline-half--right">
-      <span class="highlight">MUNCH</span>
+      <span class="highlight">Kunstnernes</span>
+      <span class="highlight">Hus</span>
       <span>Oslo</span>
       <span>Norway</span>
-      <span class="highlight">12-14</span>
+      <span class="highlight">8&ndash;11</span>
       <span class="highlight">January</span>
-      <span class="highlight">2024</span>
+      <span class="highlight">2026</span>
     </div>
   </div>
 </template>
@@ -32,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .headline {
   position: fixed;
-  z-index: 1000;
+  z-index: 900;
   grid-row: span 2;
   font-size: var(--font-l);
   span {

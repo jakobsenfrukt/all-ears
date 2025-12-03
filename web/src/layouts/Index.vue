@@ -8,6 +8,7 @@
       </main>
     </transition>
     <Footer index />
+    <SplashScreen />
   </div>
 </template>
 
@@ -23,11 +24,13 @@ query {
 import Background from "@/components/Background.vue";
 import Headline from "~/components/Headline.vue";
 import Footer from "~/components/Footer.vue";
+import SplashScreen from "../components/SplashScreen.vue";
 export default {
   components: {
     Background,
     Headline,
     Footer,
+    SplashScreen
   },
 };
 </script>

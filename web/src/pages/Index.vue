@@ -1,7 +1,7 @@
 <template>
   <IndexLayout class="index-page">
     <Lineup />
-    <MunchLogo />
+    <KHLogo />
   </IndexLayout>
 </template>
 
@@ -24,7 +24,7 @@ import Background from "@/components/Background";
 import Headline from "@/components/Headline";
 import Logo from "@/components/Logo";
 import Lineup from "@/components/Lineup";
-import MunchLogo from "@/components/MunchLogo";
+import KHLogo from "@/components/KHLogo";
 
 export default {
   metaInfo() {
@@ -45,7 +45,7 @@ export default {
     Headline,
     Logo,
     Lineup,
-    MunchLogo,
+    KHLogo
   },
 };
 </script>

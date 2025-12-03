@@ -2,9 +2,9 @@
   <div class="background" :class="page">
     <img
       v-if="page === 'index'"
-      src="/images/2024/Webside-bakgrunn-forside.png"
+      src="/images/2026/Bakgrunn1.png"
     />
-    <img v-else src="/images/2024/Webside-bakgrunn-undersider.png" />
+    <img v-else src="/images/2026/Bakgrunn2.png" />
     <!--<img v-if="page === 'index'" src="/images/bg/bg-index.jpg" />
     <img v-else-if="page === 'artists'" src="/images/bg/bg-artists.jpg" />
     <img v-else-if="page === 'tickets'" src="/images/bg/bg-tickets.jpg" />
