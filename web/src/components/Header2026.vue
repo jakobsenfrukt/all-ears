@@ -1,5 +1,5 @@
 <template>
-  <header class="site-header">
+  <header class="site-header" :class="{ menuopen: menuOpen }">
     <a href="/" class="headline">
       <div class="headline-half headline-half--left">
           <span class="highlight">All Ears</span>
@@ -11,11 +11,26 @@
         <span class="highlight">8&ndash;11 January 2026</span>
       </div>
     </a>
-    <nav class="site-nav">
-      <div class="nav-link"><LinkIcon /><g-link to="/artists">View artists</g-link></div>
-      <div class="nav-link"><LinkIcon /><g-link to="/tickets">Get tickets</g-link></div>
-      <div class="nav-link"><LinkIcon /><g-link to="/info/">Info</g-link></div>
-      <div class="nav-link"><LinkIcon />
+    <div class="menu-toggle" @click="toggleMenu()" role="button">
+      <template v-if="menuOpen">
+        <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="97.2652" y="49.1817" width="500" height="68" transform="rotate(45 97.2652 49.1817)" fill="currentColor"/>
+          <rect x="450.818" y="97.2649" width="500" height="68" transform="rotate(135 450.818 97.2649)" fill="currentColor"/>
+        </svg>
+      </template>
+      <template v-else>
+        <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="41" y="221" width="418" height="68" fill="currentColor"/>
+          <rect x="41" y="63" width="418" height="68" fill="currentColor"/>
+          <rect x="41" y="369" width="418" height="68" fill="currentColor"/>
+        </svg>
+      </template>
+    </div>
+    <nav class="site-nav" :class="{ menuopen: menuOpen }">
+      <div class="nav-link"><g-link to="/artists">View artists</g-link></div>
+      <div class="nav-link"><g-link to="/tickets">Get tickets</g-link></div>
+      <div class="nav-link"><g-link to="/info/">Info</g-link></div>
+      <div class="nav-link">
         <a
           :href="$static.general.social.instagram"
           aria-label="Instagram"
@@ -23,7 +38,7 @@
           target="_blank"
         >Instagram</a>
       </div>
-      <div class="nav-link"><LinkIcon />
+      <div class="nav-link">
         <a
           :href="$static.general.social.facebook"
           aria-label="Facebook"
@@ -59,6 +74,16 @@ export default {
   components: {
     LinkIcon,
   },
+  data() {
+    return {
+      menuOpen: false
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.menuOpen = !this.menuOpen;
+    },
+  },
 };
 </script>
 
@@ -86,7 +111,7 @@ export default {
 }
 .site-header {
   grid-column: 1 / -1;
-  margin-bottom: 1.6rem;
+  margin-bottom: 3.2rem;
   font-size: var(--font-m);
   position: relative;
   z-index: 10;
@@ -94,7 +119,8 @@ export default {
   justify-content: space-between;
 }
 .site-nav {
-  min-width: 8rem;
+  padding-left: 2rem;
+  text-align: right;
 }
 .nav-link {
   font-size: var(--font-m);
@@ -105,7 +131,17 @@ export default {
     text-decoration-thickness: 0.1em;
   }
 }
-@media (max-width: 800px) {
+.menu-toggle {
+  display: none;
+  color: currentColor;
+  cursor: pointer;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+@media (max-width: 600px) {
   .headline {
     position: relative;
     font-size: var(--font-m);
@@ -122,8 +158,30 @@ export default {
       }
     }
   }
+  .menu-toggle {
+    display: block;
+  }
   .site-nav {
-    min-width: 6rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: all .3s ease;
+    opacity: 0;
+
+    &.menuopen {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .nav-link {
+    font-size: var(--font-xl);
+  }
+  .site-header {
+    transition: all .3s ease;
+    &.menuopen {
+      padding-top: 8.4rem;
+    }
   }
 }
 </style>
