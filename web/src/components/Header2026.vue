@@ -165,7 +165,7 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateY(-100%);
+    transform: translateY(-110%);
     transition: all .3s ease;
     opacity: 0;
 
