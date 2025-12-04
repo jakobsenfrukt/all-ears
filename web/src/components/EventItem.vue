@@ -55,10 +55,10 @@ export default {
   position: relative;
 
   &-text {
-    padding-top: 0.2rem;
+    padding-top: 0;
   }
   &-name {
-    font-size: var(--font-l);
+    font-size: var(--font-m);
     color: var(--color-text);
     .nationality {
       display: inline-block;

@@ -5,11 +5,6 @@
       src="/images/2026/Bakgrunn1.png"
     />
     <img v-else src="/images/2026/Bakgrunn2.png" />
-    <!--<img v-if="page === 'index'" src="/images/bg/bg-index.jpg" />
-    <img v-else-if="page === 'artists'" src="/images/bg/bg-artists.jpg" />
-    <img v-else-if="page === 'tickets'" src="/images/bg/bg-tickets.jpg" />
-    <img v-else-if="page === 'info'" src="/images/bg/bg-info.jpg" />
-    <img v-else src="/images/bg/bg-5.jpg" />-->
   </div>
 </template>
 
@@ -17,6 +12,27 @@
 export default {
   props: {
     page: String,
+  },
+  mounted() {
+    this.updateHtmlBackground();
+  },
+
+  watch: {
+    page() {
+      this.updateHtmlBackground();
+    },
+  },
+
+  methods: {
+    updateHtmlBackground() {
+      const html = document.documentElement;
+
+      if (this.page === "index") {
+        html.style.background = "var(--color-orange)";
+      } else {
+        html.style.background = "var(--color-gray)";
+      }
+    },
   },
 };
 </script>
@@ -29,7 +45,7 @@ export default {
   overflow: hidden;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
   background-color: var(--color-red);
 
   &.index {

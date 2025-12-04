@@ -2,10 +2,13 @@
   <section class="lineup">
     <ul class="lineup-list">
       <li v-for="artist in $static.frontpage.lineup" :key="artist.id">
-        <g-link to="/artists"
-          >{{ artist.title }}
-          <sup class="nationality">({{ artist.nationality }})</sup></g-link
-        >
+        <g-link to="/artists">
+          {{ getFirstWords(artist.title) }}
+          <span class="no-break">
+            {{ getLastWord(artist.title) }}
+            <sup class="nationality">({{ artist.nationality }})</sup>
+          </span>
+        </g-link>
       </li>
     </ul>
     <OtherEvents hideHeading />
@@ -31,17 +34,23 @@ export default {
   components: {
     OtherEvents,
   },
+  methods: {
+    getFirstWords(title) {
+      const words = title.split(" ");
+      return words.slice(0, -1).join(" ");
+    },
+    getLastWord(title) {
+      return title.split(" ").pop();
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .lineup {
-  margin: 0 0 0 auto;
   color: var(--color-highlight);
-  text-align: right;
   position: relative;
   z-index: 100;
-  max-width: 20rem;
   &-list {
     list-style: none;
     margin: 0 0 2rem;
@@ -49,6 +58,7 @@ export default {
 
     li {
       color: var(--color-highlight);
+      display: block;
 
       &:nth-of-type(even) {
         color: var(--color-text);
@@ -56,7 +66,8 @@ export default {
     }
   }
   a {
-    font-size: var(--font-l);
+    display: block;
+    font-size: var(--font-m);
     margin: 0;
     &:hover {
       text-decoration: none;
@@ -69,14 +80,7 @@ export default {
   font-size: 0.5em;
   line-height: 2;
 }
-@media (max-width: 800px) {
-  .lineup {
-    margin: 0;
-    text-align: left;
-    margin-top: 60vw;
-    a {
-      font-size: var(--font-l);
-    }
-  }
+.no-break {
+  white-space: nowrap;
 }
 </style>

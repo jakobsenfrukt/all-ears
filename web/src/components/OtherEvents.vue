@@ -98,10 +98,10 @@ export default {
 .events-grid {
   align-items: top;
   margin-bottom: 1rem;
-  font-size: var(--font-l);
+  font-size: var(--font-m);
 }
 .events-heading {
-  font-size: var(--font-l);
+  font-size: var(--font-m);
   margin-bottom: 1rem;
 }
 .event-category {

@@ -1,13 +1,12 @@
 <template>
   <div class="layout">
     <Background page="index" />
-    <Headline index />
+    <Header2026 />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
       </main>
     </transition>
-    <Footer index />
     <SplashScreen />
   </div>
 </template>
@@ -25,12 +24,14 @@ import Background from "@/components/Background.vue";
 import Headline from "~/components/Headline.vue";
 import Footer from "~/components/Footer.vue";
 import SplashScreen from "../components/SplashScreen.vue";
+import Header2026 from "../components/Header2026.vue";
 export default {
   components: {
     Background,
     Headline,
     Footer,
-    SplashScreen
+    SplashScreen,
+    Header2026
   },
 };
 </script>
@@ -43,7 +44,7 @@ export default {
   grid-template-rows: auto 1fr;
 }
 .site-main {
-  grid-column: 2 / span 3;
+  grid-column: 1 / -1;
   grid-row: 2;
 }
 
@@ -53,15 +54,5 @@ export default {
 
 .fade-enter {
   opacity: 0;
-}
-
-@media (max-width: 800px) {
-  .layout {
-    grid-template-columns: 1fr;
-    background-image: none !important;
-  }
-  .site-main {
-    grid-column: 1 / -1;
-  }
 }
 </style>

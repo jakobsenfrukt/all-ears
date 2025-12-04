@@ -1,15 +1,13 @@
 <template>
   <div class="layout" :class="page">
     <Background />
-    <Headline class="headline" />
-    <Header class="header" />
+    <Header2026 class="header" />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
         <Totop />
       </main>
     </transition>
-    <Footer class="footer" />
   </div>
 </template>
 
@@ -24,7 +22,7 @@ query {
 <script>
 import Background from "@/components/Background.vue";
 import Headline from "~/components/Headline.vue";
-import Header from "~/components/Header.vue";
+import Header2026 from "~/components/Header2026.vue";
 import Footer from "~/components/Footer.vue";
 import Totop from "@/components/Totop.vue";
 
@@ -32,7 +30,7 @@ export default {
   components: {
     Background,
     Headline,
-    Header,
+    Header2026,
     Footer,
     Totop,
   },
@@ -50,7 +48,7 @@ export default {
   grid-template-rows: auto 1fr;
 }
 .site-main {
-  grid-column: 2 / span 3;
+  grid-column: 1 / -1;
   grid-row: 2;
   min-height: 100vh;
   margin-bottom: 2rem;

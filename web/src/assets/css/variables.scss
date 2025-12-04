@@ -3,6 +3,7 @@
 :root {
   --font-sans: 'neue-haas-grotesk-display', helvetica, arial, sans-serif;
 
+  --font-root: calc(22px + 6 * (100vw - 420px) / 1200);
   --font-s: .8rem;
   --font-m: 1rem;
   --font-l: 1.4rem;
@@ -28,10 +29,15 @@
   --color-red: #922A29;
   --color-blue: #1F286F;
   --font-l: 1.2rem;
+
+  // 2026
+  --color-orange: #DC5A27;
+  --color-gray: #797B82;
+
 }
 
 body {
-  --color-background: var(--color-red);
+  --color-background: var(--color-gray);
   --color-text: var(--color-white);
   --color-highlight: var(--color-white);
 }
@@ -46,9 +52,10 @@ body {
 
 @media (max-width: 600px) {
   :root {
+    --font-root: calc(21px + 6 * (100vw - 420px) / 1200);
     --font-l: 1rem;
-    --font-m: .9rem;
-    --font-s: .6rem;
+    --font-m: .8rem;
+    --font-s: .7rem;
     --spacing-m: .4rem;
   }
 }

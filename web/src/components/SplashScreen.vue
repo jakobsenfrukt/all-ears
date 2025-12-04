@@ -5,11 +5,24 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    document.documentElement.style.backgroundColor = "#ECCD35";
+    setTimeout(() => {
+      document.documentElement.style.transition = "background-color 0.3s ease";
+      document.documentElement.style.backgroundColor = "var(--color-orange)";
+    }, 1500);
+  },
+};
+</script>
+
+
 <style lang="scss" scoped>
 .splash {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   overflow: hidden;
   top: 0;
   left: 0;
@@ -17,8 +30,8 @@
   background: #ECCD35;
 
   opacity: 1;
-  animation: fadeOut 1s ease forwards;
-  animation-delay: 1s;
+  animation: fadeOut .3s ease forwards;
+  animation-delay: 1.5s;
   pointer-events: none;
 
   .mobile {

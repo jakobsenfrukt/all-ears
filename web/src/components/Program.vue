@@ -113,15 +113,20 @@ export default {
 <style lang="scss" scoped>
 .program-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
   align-items: top;
   margin-bottom: 3rem;
-  font-size: var(--font-l);
+  font-size: var(--font-m);
 }
 .program-day {
   grid-column: 1 / -1;
   color: var(--color-highlight);
+}
+@media (max-width: 1200px) {
+  .program-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media (max-width: 800px) {
   .program-grid {
