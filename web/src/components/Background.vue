@@ -46,10 +46,10 @@ export default {
   top: 0;
   left: 0;
   z-index: 0;
-  background-color: var(--color-red);
+  background-color: var(--color-gray);
 
   &.index {
-    background-color: var(--color-blue);
+    background-color: var(--color-orange);
   }
 
   img {
