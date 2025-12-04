@@ -14,6 +14,7 @@
   top: 0;
   left: 0;
   z-index: 9000;
+  background: #ECCD35;
 
   opacity: 1;
   animation: fadeOut 1s ease forwards;
