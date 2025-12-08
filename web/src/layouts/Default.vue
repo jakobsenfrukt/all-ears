@@ -84,4 +84,9 @@ export default {
 .fade-enter {
   opacity: 0;
 }
+@media (max-width: 600px) {
+  .layout {
+    padding: calc(var(--spacing-m)*2);
+  }
+}
 </style>
