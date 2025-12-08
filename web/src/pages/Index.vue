@@ -55,7 +55,6 @@ export default {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  padding-bottom: 3rem;
   &-logo {
     position: fixed;
     top: 5vh;

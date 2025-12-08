@@ -83,4 +83,9 @@ export default {
 .no-break {
   white-space: nowrap;
 }
+@media (max-width: 600px) {
+  .lineup {
+    padding-bottom: 3rem;
+  }
+}
 </style>
