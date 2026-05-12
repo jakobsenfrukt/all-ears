@@ -8,7 +8,7 @@
       <div class="headline-half headline-half--right">
         <span class="highlight">Kunstnernes Hus</span>
         <span>Oslo, Norway</span>
-        <span class="highlight">8&ndash;11 January 2026</span>
+        <!--<span class="highlight">8&ndash;11 January 2026</span>-->
       </div>
     </a>
     <div class="menu-toggle" @click="toggleMenu()" role="button">
@@ -27,8 +27,8 @@
       </template>
     </div>
     <nav class="site-nav" :class="{ menuopen: menuOpen }">
-      <div class="nav-link"><g-link to="/artists">View artists</g-link></div>
-      <div class="nav-link"><g-link to="/tickets">Get tickets</g-link></div>
+      <!--<div class="nav-link"><g-link to="/artists">View artists</g-link></div>
+      <div class="nav-link"><g-link to="/tickets">Get tickets</g-link></div>-->
       <div class="nav-link"><g-link to="/info/">Info</g-link></div>
       <div class="nav-link">
         <a

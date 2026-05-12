@@ -7,7 +7,7 @@
         <slot />
       </main>
     </transition>
-    <SplashScreen />
+    <!--<SplashScreen />-->
   </div>
 </template>
 

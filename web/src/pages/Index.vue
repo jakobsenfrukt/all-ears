@@ -1,6 +1,9 @@
 <template>
   <IndexLayout class="index-page">
-    <Lineup />
+    <section class="info-section">
+      <block-content :blocks="$page.about._rawLead" class="about-lead" />
+    </section>
+    <!--<Lineup />-->
     <KHLogo />
   </IndexLayout>
 </template>
@@ -15,6 +18,9 @@ query {
       }
     }
   }
+  about: sanityAbout (id: "about") {
+    _rawLead
+  }
 }
 </page-query>
 
@@ -25,6 +31,7 @@ import Headline from "@/components/Headline";
 import Logo from "@/components/Logo";
 import Lineup from "@/components/Lineup";
 import KHLogo from "@/components/KHLogo";
+import BlockContent from "@/components/BlockContent";
 
 export default {
   metaInfo() {
@@ -45,7 +52,8 @@ export default {
     Headline,
     Logo,
     Lineup,
-    KHLogo
+    KHLogo,
+    BlockContent
   },
 };
 </script>
@@ -64,6 +72,9 @@ export default {
     z-index: 1;
   }
 }
+.info-section {
+  width: 66%;
+}
 @media (max-width: 800px) {
   .index-page {
     &-logo {
@@ -75,6 +86,9 @@ export default {
       color: white;
       z-index: 1;
     }
+  }
+  .info-section {
+    width: 100%;
   }
 }
 </style>
