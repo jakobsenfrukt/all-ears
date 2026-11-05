@@ -23,14 +23,14 @@ export default {
   methods: {
     dismiss() {
       this.visible = false;
-      document.documentElement.style.backgroundColor = "var(--color-orange)";
+      document.documentElement.style.backgroundColor = "var(--color-pink)";
     },
   },
   mounted() {
-    document.documentElement.style.backgroundColor = "#ECCD35";
+    document.documentElement.style.backgroundColor = "var(--color-pink)";
     setTimeout(() => {
       document.documentElement.style.transition = "background-color 0.3s ease";
-      document.documentElement.style.backgroundColor = "var(--color-orange)";
+      document.documentElement.style.backgroundColor = "var(--color-black)";
     }, 1500);
   },
 };
@@ -46,7 +46,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 9000;
-  background: #ECCD35;
+  background: var(--color-pink);
 
   opacity: 1;
   animation: fadeOut .3s ease forwards;
