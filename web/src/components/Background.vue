@@ -2,9 +2,13 @@
   <div class="background" :class="page">
     <img
       v-if="page === 'index'"
-      src="/images/2026/Bakgrunn1.png"
+      src="/images/Bakgrunn-forside.png"
     />
-    <img v-else src="/images/2026/Bakgrunn2.png" />
+    <img
+      v-else-if="page === 'info'"
+      src="/images/Bakgrunn-infoside.png"
+    />
+    <img v-else src="/images/Bakgrunn-4.png" />
   </div>
 </template>
 
@@ -28,9 +32,9 @@ export default {
       const html = document.documentElement;
 
       if (this.page === "index") {
-        html.style.background = "var(--color-orange)";
+        html.style.background = "var(--color-pink)";
       } else {
-        html.style.background = "var(--color-gray)";
+        html.style.background = "var(--color-black)";
       }
     },
   },
@@ -46,10 +50,10 @@ export default {
   top: 0;
   left: 0;
   z-index: 0;
-  background-color: var(--color-gray);
+  background-color: var(--color-black);
 
   &.index {
-    background-color: var(--color-orange);
+    background-color: var(--color-pink);
   }
 
   img {

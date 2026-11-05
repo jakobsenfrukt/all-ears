@@ -1,13 +1,13 @@
 <template>
   <div class="layout">
     <Background page="index" />
-    <Header2026 />
+    <Header />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
       </main>
     </transition>
-    <!--<SplashScreen />-->
+    <SplashScreen v-if="$static.general.showArtists" />
   </div>
 </template>
 
@@ -15,6 +15,9 @@
 query {
   metadata {
     siteName
+  }
+  general: sanityGeneral (id: "general") {
+    showArtists
   }
 }
 </static-query>
@@ -24,14 +27,14 @@ import Background from "@/components/Background.vue";
 import Headline from "~/components/Headline.vue";
 import Footer from "~/components/Footer.vue";
 import SplashScreen from "../components/SplashScreen.vue";
-import Header2026 from "../components/Header2026.vue";
+import Header from "../components/Header.vue";
 export default {
   components: {
     Background,
     Headline,
     Footer,
     SplashScreen,
-    Header2026
+    Header
   },
 };
 </script>

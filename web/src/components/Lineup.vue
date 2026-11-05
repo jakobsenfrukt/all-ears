@@ -48,7 +48,7 @@ export default {
 
 <style lang="scss" scoped>
 .lineup {
-  color: var(--color-highlight);
+  color: var(--color-text);
   position: relative;
   z-index: 100;
   &-list {
@@ -57,12 +57,8 @@ export default {
     padding: 0;
 
     li {
-      color: var(--color-highlight);
+      color: var(--color-text);
       display: block;
-
-      &:nth-of-type(even) {
-        color: var(--color-text);
-      }
     }
   }
   a {

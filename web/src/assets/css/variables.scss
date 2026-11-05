@@ -34,12 +34,17 @@
   --color-orange: #DC5A27;
   --color-gray: #797B82;
 
+  // 2027
+  --color-white: #c8e6e6;
+  --color-yellow: #ffe745;
+  --color-pink: #cc4799;
+  --color-black: #1e1e1e
 }
 
 body {
-  --color-background: var(--color-gray);
+  --color-background: var(--color-black);
   --color-text: var(--color-white);
-  --color-highlight: var(--color-white);
+  --color-highlight: var(--color-yellow);
 }
 
 @media (max-width: 800px) {

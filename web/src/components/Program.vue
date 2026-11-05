@@ -121,7 +121,7 @@ export default {
 }
 .program-day {
   grid-column: 1 / -1;
-  color: var(--color-highlight);
+  color: var(--color-text);
 }
 @media (max-width: 1200px) {
   .program-grid {

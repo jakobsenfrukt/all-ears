@@ -1,7 +1,7 @@
 <template>
   <div class="layout" :class="page">
-    <Background />
-    <Header2026 class="header" />
+    <Background :page="page" />
+    <Header class="header" />
     <transition name="fade" appear>
       <main class="site-main">
         <slot />
@@ -22,7 +22,7 @@ query {
 <script>
 import Background from "@/components/Background.vue";
 import Headline from "~/components/Headline.vue";
-import Header2026 from "~/components/Header2026.vue";
+import Header from "~/components/Header.vue";
 import Footer from "~/components/Footer.vue";
 import Totop from "@/components/Totop.vue";
 
@@ -30,7 +30,7 @@ export default {
   components: {
     Background,
     Headline,
-    Header2026,
+    Header,
     Footer,
     Totop,
   },

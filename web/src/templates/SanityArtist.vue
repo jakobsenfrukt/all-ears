@@ -135,7 +135,7 @@ query artist ($id: ID!) {
     }
   }
   &-time {
-    color: var(--color-highlight);
+    color: var(--color-text);
   }
   &-text {
     grid-column: span 3;
@@ -155,7 +155,7 @@ query artist ($id: ID!) {
       grid-column: 1 / -1;
 
       &-no {
-        color: var(--color-darkgray);
+        opacity: .6;
       }
     }
   }

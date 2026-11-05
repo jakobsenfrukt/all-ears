@@ -9,6 +9,12 @@ export default {
       title: 'Title'
     },
     {
+      name: 'date',
+      type: 'string',
+      title: 'Festival date',
+      descriptions: 'Displayed in the header on all pages.'
+    },
+    {
       name: 'description',
       type: 'text',
       title: 'Description',

@@ -1,12 +1,31 @@
 <template>
-  <div class="splash">
-    <img class="desktop" src="/images/2026/Splash-screen-desktop.png" />
-    <img class="mobile" src="/images/2026/Splash-screen-mobil.png" />
+  <div
+    v-if="visible"
+    class="splash"
+    :class="{ fading }"
+    @click="dismiss"
+    @animationstart="fading = true"
+    @animationend="visible = false"
+  >
+    <img class="desktop" src="/images/Splash-screen-desktop.png" />
+    <img class="mobile" src="/images/Splash-screen-mobil.png" />
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      visible: true,
+      fading: false,
+    };
+  },
+  methods: {
+    dismiss() {
+      this.visible = false;
+      document.documentElement.style.backgroundColor = "var(--color-orange)";
+    },
+  },
   mounted() {
     document.documentElement.style.backgroundColor = "#ECCD35";
     setTimeout(() => {
@@ -32,7 +51,11 @@ export default {
   opacity: 1;
   animation: fadeOut .3s ease forwards;
   animation-delay: 1.5s;
-  pointer-events: none;
+  cursor: pointer;
+
+  &.fading {
+    pointer-events: none;
+  }
 
   .mobile {
     display: none;
