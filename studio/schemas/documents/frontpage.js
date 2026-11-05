@@ -20,5 +20,11 @@ export default {
       name: 'ogimg',
       type: 'image'
     }
-  ]
+  ],
+  preview: {
+    select: {},
+    prepare() {
+      return { title: "Front page" };
+    },
+  },
 }
