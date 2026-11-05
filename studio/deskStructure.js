@@ -1,3 +1,10 @@
+import HomeIcon from '@sanity/icons/Home'
+import CogIcon from '@sanity/icons/Cog'
+import MicrophoneIcon from '@sanity/icons/Microphone'
+import CalendarIcon from '@sanity/icons/Calendar'
+import InfoOutlineIcon from '@sanity/icons/InfoOutline'
+import TagIcon from '@sanity/icons/Tag'
+
 const hiddenDocTypes = listItem =>
   !['general', 'artist', 'event', 'about', 'frontpage', 'tickets'].includes(listItem.getId())
 
@@ -6,16 +13,18 @@ export const structure = (S) =>
     .title('Content')
     .items([
       S.listItem()
-        .title('General')
+        .title('Settings')
+        .icon(CogIcon)
         .child(
           S.editor()
-            .title('General')
+            .title('Settings')
             .id('general')
             .schemaType('general')
             .documentId('general')
         ),
       S.listItem()
         .title('Front page')
+        .icon(HomeIcon)
         .child(
           S.editor()
             .title('Front page')
@@ -25,14 +34,17 @@ export const structure = (S) =>
         ),
       S.listItem()
         .title('Artists')
+        .icon(MicrophoneIcon)
         .schemaType('artist')
         .child(S.documentTypeList('artist').title('Artists')),
       S.listItem()
         .title('Other events')
+        .icon(CalendarIcon)
         .schemaType('event')
         .child(S.documentTypeList('event').title('Events')),
       S.listItem()
         .title('Info')
+        .icon(InfoOutlineIcon)
         .child(
           S.editor()
             .title('Info')
@@ -42,6 +54,7 @@ export const structure = (S) =>
         ),
       S.listItem()
         .title('Tickets')
+        .icon(TagIcon)
         .child(
           S.editor()
             .title('Tickets')

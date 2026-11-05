@@ -27,8 +27,10 @@
       </template>
     </div>
     <nav class="site-nav" :class="{ menuopen: menuOpen }">
-      <!--<div class="nav-link"><g-link to="/artists">View artists</g-link></div>
-      <div class="nav-link"><g-link to="/tickets">Get tickets</g-link></div>-->
+      <template v-if="$static.general.showArtists">
+        <div class="nav-link"><g-link to="/artists">View artists</g-link></div>
+        <div class="nav-link"><g-link to="/tickets">Get tickets</g-link></div>
+      </template>
       <div class="nav-link"><g-link to="/info/">Info</g-link></div>
       <div class="nav-link">
         <a
@@ -63,6 +65,7 @@ query {
       instagram
       facebook
     }
+    showArtists
   }
 }
 </static-query>

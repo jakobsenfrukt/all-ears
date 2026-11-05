@@ -28,5 +28,11 @@ export default {
       title: 'Contact',
       type: 'body',
     }
-  ]
+  ],
+  preview: {
+    select: {},
+    prepare() {
+      return { title: "About" };
+    },
+  },
 }

@@ -44,7 +44,6 @@ export default {
       type: 'body',
     },
   ],
-
   preview: {
     select: {
       title: 'title',
