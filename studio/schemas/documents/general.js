@@ -24,7 +24,13 @@ export default {
       name: 'showArtists',
       type: 'boolean',
       title: 'Show artists and events',
-      description: 'If this is switched off, the program (including all artists and events) are hidden and only the teaser and info page is shown.'
+      description: 'If this is switched off, the program (including all artists and events) is hidden. Only the teaser text below is shown on the front page. Everything except info and social media is hidden from the menu.'
+    },
+    {
+      name: 'teaserText',
+      type: 'lead',
+      title: 'Teaser text',
+      description: 'Text shown on the front page if artists and events are hidden.'
     },
     {
       name: 'social',

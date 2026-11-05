@@ -8,6 +8,10 @@
       v-else-if="page === 'info'"
       src="/images/Bakgrunn-infoside.png"
     />
+    <img
+      v-else-if="page === 'tickets'"
+      src="/images/Bakgrunn-5.png"
+    />
     <img v-else src="/images/Bakgrunn-4.png" />
   </div>
 </template>

@@ -2,7 +2,7 @@
   <IndexLayout class="index-page">
     <Lineup v-if="$page.general.showArtists" />
     <section v-else class="info-section">
-      <block-content :blocks="$page.about._rawLead" class="about-lead" />
+      <block-content :blocks="$page.general._rawTeaserText" class="about-lead" />
     </section>
     <KHLogo />
   </IndexLayout>
@@ -18,11 +18,9 @@ query {
       }
     }
   }
-  about: sanityAbout (id: "about") {
-    _rawLead
-  }
   general: sanityGeneral (id: "general") {
     showArtists
+    _rawTeaserText
   }
 }
 </page-query>
