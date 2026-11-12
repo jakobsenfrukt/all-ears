@@ -8,6 +8,7 @@
         <Totop />
       </main>
     </transition>
+    <Footer class="footer" />
   </div>
 </template>
 
